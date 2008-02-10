@@ -3,7 +3,7 @@
 
 = Introduction =
 
-TextRoom and all other similar editors share one goal: to get you writing right away by providing distraction free environment to your liking, as well as familiar set of keyboard shortcuts to control it's behavior. If you don't feel comfortable already with your editor of choice, you may find it useful. Otherwise, you most definitely shouldn't even try it.
+TextRoom and all other similar editors share one goal: to get you writing right away by providing distraction free environment to your liking, as well as familiar set of keyboard shortcuts to control its behavior. If you don't feel comfortable already with your editor of choice, you may find it useful. Otherwise, you most definitely shouldn't even try it.
 
 ==== Pros ====
   * Ease of use. Basically, you have nothing to worry about and nothing to remember, you just write.
