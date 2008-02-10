@@ -1,0 +1,18 @@
+#summary Latest changes.
+#labels Featured
+
+*Changelog:*
+
+
+_ver.0.2.2 - 2008-02-09_
+
+  * the project is now hosted by [http://code.google.com/p/textroom/ code.google.com]
+  * added "Flow mode" option (thanks to [http://ubuntuforums.org/member.php?u=408505 zebulon M])
+  * rearranged Options dialog
+  * textroom.pro is now set to "release" mode
+
+
+_ver.0.2.1 - 2008-01-31_
+
+  * added "Auto save" option (thanks to [http://ubuntuforums.org/member.php?u=1513 adamvert])
+  * minor bugfixes
