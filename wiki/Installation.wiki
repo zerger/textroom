@@ -33,7 +33,7 @@ and
 make
 }}}
 
-to compile the editor. After successful compilation, you may start the TextRoom simply by typing _bin/textroom_ (not recommended). Or, to install it system wide, type as root:
+to compile the editor. After successful compilation, you may start TextRoom simply by typing _bin/textroom_ (not recommended). Or, to install it system wide, type as root:
 
 {{{
 make install
