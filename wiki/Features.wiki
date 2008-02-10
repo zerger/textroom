@@ -1,0 +1,18 @@
+#summary TextRoom pros and cons
+#labels Featured
+
+= Introduction =
+
+TextRoom and all other similar editors share one goal: to get you writing right away by providing distraction free environment to your liking, as well as familiar set of keyboard shortcuts to control it's behavior. If you don't feel comfortable already with your editor of choice, you may find it useful. Otherwise, you most definitely shouldn't even try it.
+
+==== Pros ====
+  * Ease of use. It's limiting by design. Basically, you have nothing to worry about and nothing to remember, you just write.
+==== Cons ====
+  * Once again limiting by design. Some might say even [http://diveintomark.org/archives/2007/01/21/wrongroom pointless].
+
+= Features =
+
+  * configurable colors and fonts
+  * configurable behavior: full-screen on/off, auto save, flow mode (disable delete and backspace keys), load last document on startup
+  * display current time and date, some statistics
+  * keyboard shortcuts for full-screen, cut, copy, paste, undo, redo, minimize, new, open, save, save as, and quit
