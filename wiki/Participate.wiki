@@ -1,4 +1,5 @@
 #summary Developers, patches, help needed.
+#labels Featured
 
 You are more than welcome to participate in any way you can, your help is invaluable:
 
