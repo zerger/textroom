@@ -3,6 +3,10 @@
 
 *Changelog:*
 
+_ver.0.2.3 - 2008-02-16_
+
+  * added simple Find dialog
+  * horizontalScrollBarPolicy set to ScrollBarAsNeeded
 
 _ver.0.2.2 - 2008-02-09_
 
