@@ -1,0 +1,7 @@
+#summary Developers, patches, help needed.
+
+You are more than welcome to participate in any way you can, your help is invaluable:
+
+  * offer advise based on your knowledge on C++, Qt, usability
+  * post patches
+  * report bugs and wishes, share the way you use TextRoom
