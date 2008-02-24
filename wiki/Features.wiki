@@ -13,6 +13,6 @@ TextRoom and all other similar editors share one goal: to get you writing right 
 = Features =
 
   * configurable colors and fonts
-  * configurable behavior: full-screen on/off, auto save, flow mode (disable delete and backspace keys), load last document on startup, remember position in text for the last file, configurable progress slider
+  * configurable behavior: full-screen on/off, auto save, flow mode (disable delete and backspace keys), load last document on startup, remember position in text for the last file, horizontal progress slider
   * display current time and date, some statistics
   * keyboard shortcuts for the most common tasks (if you start the program for the first time, just press F1 for help)
