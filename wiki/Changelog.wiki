@@ -8,8 +8,6 @@ _ver.0.2.4beta1 - 2008-02-24_
   * Added Progress slider option
   * Added Restore cursor position option
   * Removed style sheet, it was too slow; color and font changes are now applied through setPalette
-  * horizontalScrollBarPolicy set to ScrollBarAsNeeded
-  * added initial Find dialog
 
 _ver.0.2.3 - 2008-02-16_
 
