@@ -12,13 +12,13 @@ To compile TextRoom, you will need the Qt4 development libraries (ver. 4.3.2 or 
 [http://code.google.com/p/textroom/downloads/list Download] the latest version of TextRoom. Drop to command line and type:
 
 {{{
-tar xjvf ./textroom-0.2.2.tar.bz2
+tar xjvf ./textroom-0.2.3.tar.bz2
 }}}
 
 to unarchive, followed by:
 
 {{{
-cd ./textroom-0.2.2
+cd ./textroom-0.2.3
 }}}
 
 Then execute:
