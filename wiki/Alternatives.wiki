@@ -2,7 +2,7 @@
 #labels Featured
 = Introduction =
 
-Since the idea for TextRoom is in no way new or groundbreaking, and it was strongly inspired by already existing or emerging projects for other operating systems an/or platforms/toolkits, here you can find a list of possible alternatives that you may find useful.
+Since the idea for TextRoom is in no way new or groundbreaking, and it was strongly inspired by already existing or emerging projects for other operating systems and/or platforms/toolkits, here you can find a list of possible alternatives that you may find useful.
 
 You might also be interested in some criticism of the whole `*`Room craze. Read on the [http://diveintomark.org/archives/2007/01/21/wrongroom Wrongroom blog post] by author Mark Pilgrim `[diveintomark.org]`
 
@@ -37,4 +37,3 @@ You might also be interested in some criticism of the whole `*`Room craze. Read 
 
   * [http://code.google.com/p/openq10/ OpenQ10]
   * [http://code.google.com/p/phrasis/ Phrasis]
-
