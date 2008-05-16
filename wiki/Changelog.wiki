@@ -3,6 +3,19 @@
 
 *Changelog:*
 
+_ver.0.2.4beta3 - realtime - 2008-05-16_
+
+  * Added Statusbar Color option
+  * Changed the maximum Text View Size
+  * Changed Indent First Lines option to Toggle Indent First Lines (Ctrl-T)
+  * Fixed a minor bug
+
+_ver.0.2.4beta2 - realtime - 2008-05-15_
+ 
+  * Added Live Word Count and Clock on Statusbar
+  * Added Statusbar background
+
+
 _ver.0.2.4beta1 - 2008-02-24_
 
   * Added Progress slider option
