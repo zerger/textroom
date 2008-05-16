@@ -27,19 +27,11 @@
 #include <QApplication>
 #include <QSplashScreen>
 #include <QTimer>
+#include <QtGui>
+#include <QPaintDevice>
  
 #include "textroom.h"
 
-void TextRoom::paintEvent(QPaintEvent *)
-{
-int x = width();
-int y = height();
-int lefty = (y - 36);
-QPainter painter(this);
-painter.setBrush(QColor(32,32,32,255));
-painter.drawRect(0, lefty, x, y);
-}
- 
 int main(int argc, char ** argv)
 {
 	QApplication app(argc, argv);
@@ -66,9 +58,12 @@ int main(int argc, char ** argv)
 			splash->showMessage("[Press F1 for help]", Qt::AlignBottom+Qt::AlignHCenter, Qt::white);
 		}
 	}
+
+
 	
 	TextRoom *win = new TextRoom(NULL);
 	win->show();
+
 	
 	if (splash)
 	{

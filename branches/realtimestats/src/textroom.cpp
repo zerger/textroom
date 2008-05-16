@@ -25,11 +25,13 @@
 ****************************************************************************/
 
 #include <QtGui> 
+#include <QPaintDevice>
 #include "textroom.h"
 #include "optionsdialog.h"
 #include "helpdialog.h"
 #include "searchdialog.h"
  
+	
 TextRoom::TextRoom(QWidget *parent, Qt::WFlags f)
 		: QWidget(parent, f), sentenceTally(0)
 {
@@ -48,7 +50,7 @@ TextRoom::TextRoom(QWidget *parent, Qt::WFlags f)
 	new QShortcut ( QKeySequence(QKeySequence::HelpContents), this, SLOT( help() ) );
 	new QShortcut ( QKeySequence(QKeySequence::Underline), this, SLOT( options() ) );
 	new QShortcut ( QKeySequence(tr("Ctrl+Shift+S", "Save As")), this, SLOT( saveAs() ) );
-	new QShortcut ( QKeySequence(tr("Ctrl+T", "Indent First Lines")), this, SLOT( indentFirstLines() ) );
+	new QShortcut ( QKeySequence(tr("Ctrl+T", "Toggle Indent First Lines")), this, SLOT( indentFirstLines() ) );
 	new QShortcut ( QKeySequence(tr("Ctrl+H", "About TextRoom")), this, SLOT( about() ) );
 	new QShortcut ( QKeySequence(tr("Ctrl+Q", "Quit Application")) , this, SLOT( close() ) );
 	new QShortcut ( QKeySequence(tr("Alt+F4", "Quit Application")) , this, SLOT( close() ) );
@@ -90,6 +92,7 @@ TextRoom::TextRoom(QWidget *parent, Qt::WFlags f)
 	connect(horizontalSlider, SIGNAL(valueChanged(int)),
 			this, SLOT(hSliderPositionChanged()));
 
+
 	// check if we need to open some file at startup
 	const QStringList args = QCoreApplication::arguments();
 	if (args.count() == 2)
@@ -119,8 +122,33 @@ TextRoom::TextRoom(QWidget *parent, Qt::WFlags f)
 	// auto save counter
 	numChanges = 0;
 	prevLength = 0;
-	
+
+     QTimer *timer = new QTimer(this);
+     connect(timer, SIGNAL(timeout()), this, SLOT(getFileStatus()));
+     timer->start(1000);
+
+     getFileStatus();
 }
+
+void TextRoom::paintEvent(QPaintEvent *)
+{
+#ifdef Q_OS_WIN32
+	QSettings settings(QDir::homePath()+"/Application Data/"+qApp->applicationName()+".ini", QSettings::IniFormat);
+#else
+
+	QSettings settings;
+#endif
+	QString statbg = settings.value("Colors/StatusBarBgColor", "#323232").toString();
+	bool ok;
+	int clr = statbg.mid(1, 6).toInt(&ok, 16);
+	int x = width();
+	int y = height();
+	int top = y-36;
+	QPainter painter(this);
+	painter.setBrush(QColor(QRgb(clr)));
+	painter.drawRect(0, top, x, y);
+}
+
 
 void TextRoom::togleEscape()
 {
@@ -167,16 +195,19 @@ void TextRoom::closeEvent(QCloseEvent *event)
  
 void TextRoom::about() 
 {
-	QMessageBox::about(this,"About TextRoom",
+	QMessageBox::about(this,"About TextRoom RealTime",
 				"TextRoom Editor ver. 0.2.4 beta\n\n"
 		"Project home page: http://code.google.com/p/textroom/\n\n"
 		"Code, help and insights (in alphabetical order) by:\n"
 		"Adamvert (from ubuntuforums.org),\n"
 		"Magnus Edvardsson (a.k.a. zebulon M),\n"
+		"Omer Bahri Gordebak,\n"
 		"Peter Toushkov\n\n"
 		"TextRoom is partially based on\n"
 		"The Phrasis project by Jacob R. Rideout:\n"
-		"http://code.google.com/p/phrasis/");
+		"http://code.google.com/p/phrasis/\n\n"
+		"TextRoom RealTime is a stripped down version\n"
+		"For writers in mind.\n");
 }
 
 void TextRoom::newFile()
@@ -356,9 +387,19 @@ QString TextRoom::strippedName(const QString &fullFileName)
 
 void TextRoom::indentFirstLines()
 {
-	// does the user want this, or not?
+	int valind;
+	if (ind)
+	{
+	ind = false;
+	valind = 50;
+	}
+	else
+	{
+	ind = true;
+	valind = 0;
+	}
 	QTextBlockFormat modifier;
-	modifier.setTextIndent(50);
+	modifier.setTextIndent(valind);
 	modifier.setBottomMargin(10);
 	QTextCursor cursor(textEdit->document());
 	do {
@@ -381,7 +422,7 @@ void TextRoom::getFileStatus()
 	QRegExp wordsRX("\\s+");
 	QStringList list = text.split(wordsRX,QString::SkipEmptyParts);
 	const int words = list.count();
-	statsLabel->setText(tr("%1").arg(words) + " words.  " + clock);
+	statsLabel->setText(tr("%1").arg(words) + " Words  " + clock);
 }
 
 void TextRoom::documentWasModified()
@@ -438,10 +479,11 @@ void TextRoom::readSettings()
 
 	QString color = settings.value("Colors/Foreground", "#d0a100" ).toString();
 	QString back = settings.value("Colors/Background", "black" ).toString();
+	QString statbg = settings.value("Colors/StatusBarBgColor", "#323232").toString();
 	QString status_c = settings.value("Colors/StatusColor", "#404040" ).toString();
 	QString scrollb_c = settings.value("Colors/ScrollBarColor", "#1E1E1E" ).toString();
 
-	loadStyleSheet(color, back, status_c, scrollb_c);
+	loadStyleSheet(color, back, statbg, status_c, scrollb_c);
 
 	// oxygen does weird stuff with the background
 	QApplication::setStyle("plastique");
@@ -533,10 +575,8 @@ void TextRoom::help()
 	helpDialog->showNormal();
 }
 
-void TextRoom::loadStyleSheet(const QString &fcolor, const QString &bcolor, const QString &scolor, const QString &sbcolor)
+void TextRoom::loadStyleSheet(const QString &fcolor, const QString &bcolor, const QString &sbgcolor, const QString &scolor, const QString &sbcolor)
 {
-	
-
 	QPalette palette;
 
 	palette.setColor(QPalette::Text, fcolor);
@@ -550,9 +590,7 @@ void TextRoom::loadStyleSheet(const QString &fcolor, const QString &bcolor, cons
 	palette.setColor(QPalette::WindowText, scolor);
 
 	QPalette palette2;
-	QBrush brush=palette2.background();
-	brush.setColor(QColor(32,32,32,255));
-	palette2.setBrush(QPalette::Active, QPalette::Background, brush);
+	palette2.setColor(QPalette::Background, sbgcolor);
 	palette2.setColor(QPalette::Text, scolor);
 	palette2.setColor(QPalette::WindowText, scolor);
 
