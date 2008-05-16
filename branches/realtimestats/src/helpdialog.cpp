@@ -63,14 +63,14 @@ HelpDialog::HelpDialog(QWidget *parent) : QDialog(parent)
 					"Ctrl+V - Paste\n"
 					"Ctrl+A - Select All\n"
 					"Ctrl+Z - Undo (Ctrl+Shift+Z to Redo)\n"
-					"Ctrl+T - Indent first lines (useful due to unresolved bug)\n"
+					"Ctrl+I - Indent first lines (useful due to unresolved bug)\n"
 					"Shift+F4 - Go back to cursor position\n"
 					"Ctrl+F - Find\n"
 					"F3 - Find next\n"
 					"Shift+F3 - Find previous\n"
 					"\n"
-					"Ctrl+D - Show date and time in statusbar\n"
-					"Ctrl+L - Show statistics in statusbar\n"
+					"Ctrl+D - Insert Date\n"
+					"Ctrl+T - Insert Time\n"
 					"Ctrl+U - Options");
 	
 	textEdit->setPlainText( helpText );
