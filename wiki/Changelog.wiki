@@ -5,7 +5,7 @@
 
 _ver.0.2.4beta4 - realtime - 2008-05-16_
 
-  * Changed clock to real time clock. (It was updated when document was modified before)
+  * Changed clock to real time clock. (It was updating when document was modified before)
 
 _ver.0.2.4beta3 - realtime - 2008-05-16_
 
