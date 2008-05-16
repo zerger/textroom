@@ -50,7 +50,9 @@ TextRoom::TextRoom(QWidget *parent, Qt::WFlags f)
 	new QShortcut ( QKeySequence(QKeySequence::HelpContents), this, SLOT( help() ) );
 	new QShortcut ( QKeySequence(QKeySequence::Underline), this, SLOT( options() ) );
 	new QShortcut ( QKeySequence(tr("Ctrl+Shift+S", "Save As")), this, SLOT( saveAs() ) );
-	new QShortcut ( QKeySequence(tr("Ctrl+T", "Toggle Indent First Lines")), this, SLOT( indentFirstLines() ) );
+	new QShortcut ( QKeySequence(tr("Ctrl+I", "Toggle Indent First Lines")), this, SLOT( indentFirstLines() ) );
+	new QShortcut ( QKeySequence(tr("Ctrl+D", "Insert Date")), this, SLOT( insertDate() ) );
+	new QShortcut ( QKeySequence(tr("Ctrl+T", "Insert Time")), this, SLOT( insertTime() ) );	
 	new QShortcut ( QKeySequence(tr("Ctrl+H", "About TextRoom")), this, SLOT( about() ) );
 	new QShortcut ( QKeySequence(tr("Ctrl+Q", "Quit Application")) , this, SLOT( close() ) );
 	new QShortcut ( QKeySequence(tr("Alt+F4", "Quit Application")) , this, SLOT( close() ) );
@@ -157,6 +159,28 @@ void TextRoom::togleEscape()
 	else
 		close();
 
+}
+
+void TextRoom::insertDate()
+{
+	QDateTime today = QDateTime::currentDateTime();
+	QString date = today.toString("dd MMMM yyyy dddd");
+	setWindowModified(textEdit->document()->isModified());
+
+	const QString text( textEdit->document()->toPlainText() );
+
+	textEdit->insertPlainText(date);
+}
+
+void TextRoom::insertTime()
+{
+	QDateTime now = QDateTime::currentDateTime();
+	QString clock = now.toString("hh:mm");
+	setWindowModified(textEdit->document()->isModified());
+
+	const QString text( textEdit->document()->toPlainText() );
+
+	textEdit->insertPlainText(clock);
 }
 
 void TextRoom::togleFullScreen()

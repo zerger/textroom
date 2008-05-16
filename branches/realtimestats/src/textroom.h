@@ -52,6 +52,8 @@ private slots:
 	void about();
 	void options();
 	void help();
+	void insertDate();
+	void insertTime();
 	void find();
 	void find_next();
 	void find_previous();
