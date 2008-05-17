@@ -703,21 +703,7 @@ p, li { white-space: pre-wrap; }
 		</layout>
 		</item>
 
-        <item>
-	    <layout class="QHBoxLayout" >
-  		<item>
-           <widget class="QCheckBox" name="indentCheckBox" >
-            <property name="text" >
-             <string>Indent First Lines</string>
-              </property>
-              <property name="checked" >
-               <bool>true</bool>
-              </property>
-             </widget>
-            </item>
-		</layout>
-		</item>        
-
+ 
          </layout>
         </widget>
        </widget>
@@ -824,7 +810,6 @@ p, li { white-space: pre-wrap; }
   <tabstop>splashScreenCheckBox</tabstop>
   <tabstop>autoSaveCheckBox</tabstop>
   <tabstop>soundCheckBox</tabstop>
-  <tabstop>indentCheckBox</tabstop>
  </tabstops>
  <resources/>
  <connections>

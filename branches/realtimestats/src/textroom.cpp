@@ -122,6 +122,7 @@ TextRoom::TextRoom(QWidget *parent, Qt::WFlags f)
 	// auto save counter
 	numChanges = 0;
 	prevLength = 0;
+	parasold = 0;
 
      QTimer *timer = new QTimer(this);
      connect(timer, SIGNAL(timeout()), this, SLOT(getFileStatus()));
@@ -149,11 +150,11 @@ void TextRoom::paintEvent(QPaintEvent *)
 	painter.drawRect(0, top, x, y);
 }
 
-void TextRoom::playSound()
+void TextRoom::playSound(QString &filenm)
 {
 	if (isSound)
 	{
-	QSound::play("keyany.wav");
+	QSound::play(filenm);
 	}
 }
 
@@ -328,6 +329,7 @@ void TextRoom::loadFile(const QString &fileName)
 	textEdit->moveCursor(QTextCursor::Start);
 	textEdit->setUndoRedoEnabled(true);
 	textEdit->document()->blockSignals(false);
+	indentFirstLines();
 
 	QApplication::restoreOverrideCursor();
 
@@ -411,20 +413,14 @@ QString TextRoom::strippedName(const QString &fullFileName)
 	return QFileInfo(fullFileName).fileName();
 }
 
-void TextRoom::indentFirstLines(bool &indentstatus)
+void TextRoom::indentFirstLines()
 {
-	int indentsize;
 	bool soundstatus;
 	soundstatus = isSound;
 	isSound = false;
 
-	if (indentstatus)
-	{	indentsize = 50; }
-	else
-	{	indentsize = 0;  }
-
 	QTextBlockFormat modifier;
-	modifier.setTextIndent(indentsize);
+	modifier.setTextIndent(50);
 	modifier.setBottomMargin(10);
 	QTextCursor cursor(textEdit->document());
 	do {
@@ -441,8 +437,6 @@ void TextRoom::getFileStatus()
 	QDateTime now = QDateTime::currentDateTime();
 	QString clock = now.toString("hh:mm");
 
-	setWindowModified(textEdit->document()->isModified());
-
 	const QString text( textEdit->document()->toPlainText() );
 
 	//Compute words
@@ -455,6 +449,9 @@ void TextRoom::getFileStatus()
 void TextRoom::documentWasModified()
 {
 	setWindowModified(textEdit->document()->isModified());
+	
+	QString text = textEdit->document()->toPlainText();
+	parasnew = text.count("\n", Qt::CaseSensitive);
 
 	if (isAutoSave && numChanges++ > 3) {
 		numChanges = 0;	
@@ -467,8 +464,20 @@ void TextRoom::documentWasModified()
 
 	prevLength=textEdit->document()->toPlainText().size();
 
-	
-	playSound();
+	QTextCursor cursor(textEdit->document());
+	cursor.movePosition(QTextCursor::Left, QTextCursor::KeepAnchor, 1);
+	QString selected = cursor.selectedText();
+	cursor.movePosition(QTextCursor::Right, QTextCursor::MoveAnchor, 1);
+	QString filenm;	
+
+	if (parasnew > parasold)
+	{ filenm = "keyenter.wav"; }
+	else
+	{ filenm = "keyany.wav"; }
+
+	parasold = parasnew;
+
+	playSound(filenm);
 	
 	vPositionChanged();
 
@@ -548,9 +557,8 @@ void TextRoom::readSettings()
 	isAutoSave = settings.value("AutoSave", false).toBool();
 	isFlowMode = settings.value("FlowMode", false).toBool();
 	isSound = settings.value("Sound", true).toBool();
-	isIndent = settings.value("Indent", true).toBool();
 
-	indentFirstLines(isIndent);	
+	indentFirstLines();	
 
 	horizontalSlider->setVisible( settings.value("EnableScrollBar", true).toBool() );
 	isScrollBarVisible = horizontalSlider->isVisible();
