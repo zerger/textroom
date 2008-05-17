@@ -55,6 +55,7 @@ private slots:
 	void insertDate();
 	void insertTime();
 	void find();
+	void playSound();
 	void find_next();
 	void find_previous();
 	void sCursor();
@@ -94,6 +95,7 @@ private:
 	bool ind;
 	bool isAutoSave;
 	bool isFlowMode;
+	bool isSound;
 	bool isScrollBarVisible;
 
 protected:

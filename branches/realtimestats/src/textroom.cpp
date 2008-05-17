@@ -88,8 +88,7 @@ TextRoom::TextRoom(QWidget *parent, Qt::WFlags f)
 
 //	connect(textEdit, SIGNAL(cursorPositionChanged()), this, SLOT(vPositionChanged()));
 
-	connect(textEdit->verticalScrollBar(), SIGNAL(valueChanged(int)),
-			this, SLOT(vPositionChanged()));
+	connect(textEdit->verticalScrollBar(), SIGNAL(valueChanged(int)), this, SLOT(vPositionChanged()));
 
 	connect(horizontalSlider, SIGNAL(valueChanged(int)),
 			this, SLOT(hSliderPositionChanged()));
@@ -151,6 +150,13 @@ void TextRoom::paintEvent(QPaintEvent *)
 	painter.drawRect(0, top, x, y);
 }
 
+void TextRoom::playSound()
+{
+	if (isSound)
+	{
+	QSound::play("keyany.wav");
+	}
+}
 
 void TextRoom::togleEscape()
 {
@@ -411,6 +417,17 @@ QString TextRoom::strippedName(const QString &fullFileName)
 
 void TextRoom::indentFirstLines()
 {
+	bool disablesound;
+	if (isSound)
+	{
+	isSound = false;
+	disablesound = true;
+	}
+	else
+	{
+	disablesound = false;
+	}
+
 	int valind;
 	if (ind)
 	{
@@ -422,6 +439,7 @@ void TextRoom::indentFirstLines()
 	ind = true;
 	valind = 0;
 	}
+
 	QTextBlockFormat modifier;
 	modifier.setTextIndent(valind);
 	modifier.setBottomMargin(10);
@@ -429,6 +447,11 @@ void TextRoom::indentFirstLines()
 	do {
 		cursor.mergeBlockFormat(modifier);
 	} while (cursor.movePosition(QTextCursor::NextBlock));
+
+	if (disablesound)
+	{
+	isSound = true;
+	}
 }
 
 void TextRoom::getFileStatus()
@@ -462,9 +485,11 @@ void TextRoom::documentWasModified()
 		textEdit->undo();
 	} 
 
-
 	prevLength=textEdit->document()->toPlainText().size();
 
+	
+	playSound();
+	
 	vPositionChanged();
 
 	getFileStatus();
@@ -542,6 +567,7 @@ void TextRoom::readSettings()
 
 	isAutoSave = settings.value("AutoSave", false).toBool();
 	isFlowMode = settings.value("FlowMode", false).toBool();
+	isSound = settings.value("Sound", true).toBool();
 
 	horizontalSlider->setVisible( settings.value("EnableScrollBar", true).toBool() );
 	isScrollBarVisible = horizontalSlider->isVisible();

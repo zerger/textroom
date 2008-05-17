@@ -37,6 +37,7 @@ OptionsDialog::OptionsDialog(QWidget *parent)
 
 	connect(ui.statusbarSpinBox, SIGNAL( valueChanged(int) ), this, SLOT( activateApply() ) );
 	connect(ui.editorSpinBox, SIGNAL( valueChanged(int) ), this, SLOT( activateApply() ) );
+	connect(ui.soundCheckBox, SIGNAL( clicked() ), this, SLOT( activateApply() ) );
 	connect(ui.editorBoldCheckBox, SIGNAL( clicked() ), this, SLOT( activateApply() ) );
 	connect(ui.editorItalicCheckBox, SIGNAL( clicked() ), this, SLOT( activateApply() ) );
 	connect(ui.statusbarBoldCheckBox, SIGNAL( clicked() ), this, SLOT( activateApply() ) );
@@ -108,6 +109,7 @@ void OptionsDialog::reaSettings()
 
 	ui.fullScreenCheckBox->setChecked( settings.value("WindowState/ShowFullScreen", true).toBool() );
 	ui.splashScreenCheckBox->setChecked( settings.value("WindowState/ShowSplashScreen", true).toBool() );
+	ui.soundCheckBox->setChecked( settings.value("Sound", true).toBool() );
 	ui.autoSaveCheckBox->setChecked( settings.value("AutoSave", false).toBool() );
 	ui.flowModeCheckBox->setChecked( settings.value("FlowMode", false).toBool() );
 	ui.scrollBarCheckBox->setChecked( settings.value("EnableScrollBar", true).toBool() );
@@ -165,6 +167,7 @@ void OptionsDialog::writSettings()
 
 	settings.setValue("WindowState/ShowFullScreen", ui.fullScreenCheckBox->isChecked() );
 	settings.setValue("WindowState/ShowSplashScreen", ui.splashScreenCheckBox->isChecked() );
+	settings.setValue("Sound", ui.soundCheckBox->isChecked() );
 	settings.setValue("AutoSave", ui.autoSaveCheckBox->isChecked() );
 	settings.setValue("FlowMode", ui.flowModeCheckBox->isChecked() );
 	settings.setValue("EnableScrollBar", ui.scrollBarCheckBox->isChecked() );
