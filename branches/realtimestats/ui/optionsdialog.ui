@@ -6,7 +6,7 @@
     <x>0</x>
     <y>0</y>
     <width>550</width>
-    <height>350</height>
+    <height>360</height>
    </rect>
   </property>
   <property name="sizePolicy" >
@@ -702,7 +702,22 @@ p, li { white-space: pre-wrap; }
             </item>
 		</layout>
 		</item>
-        
+
+        <item>
+	    <layout class="QHBoxLayout" >
+  		<item>
+           <widget class="QCheckBox" name="indentCheckBox" >
+            <property name="text" >
+             <string>Indent First Lines</string>
+              </property>
+              <property name="checked" >
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+		</layout>
+		</item>        
+
          </layout>
         </widget>
        </widget>
@@ -804,11 +819,12 @@ p, li { white-space: pre-wrap; }
   <tabstop>statusbarItalicCheckBox</tabstop>
   <tabstop>pbEditorBackColor</tabstop>
   <tabstop>pbStatusBarBgColor</tabstop>
-  <tabstop>soundCheckBox</tabstop>
   <tabstop>fullScreenCheckBox</tabstop>
   <tabstop>loadOnStartCheckBox</tabstop>
   <tabstop>splashScreenCheckBox</tabstop>
   <tabstop>autoSaveCheckBox</tabstop>
+  <tabstop>soundCheckBox</tabstop>
+  <tabstop>indentCheckBox</tabstop>
  </tabstops>
  <resources/>
  <connections>

@@ -50,7 +50,6 @@ TextRoom::TextRoom(QWidget *parent, Qt::WFlags f)
 	new QShortcut ( QKeySequence(QKeySequence::HelpContents), this, SLOT( help() ) );
 	new QShortcut ( QKeySequence(QKeySequence::Underline), this, SLOT( options() ) );
 	new QShortcut ( QKeySequence(tr("Ctrl+Shift+S", "Save As")), this, SLOT( saveAs() ) );
-	new QShortcut ( QKeySequence(tr("Ctrl+I", "Toggle Indent First Lines")), this, SLOT( indentFirstLines() ) );
 	new QShortcut ( QKeySequence(tr("Ctrl+D", "Insert Date")), this, SLOT( insertDate() ) );
 	new QShortcut ( QKeySequence(tr("Ctrl+T", "Insert Time")), this, SLOT( insertTime() ) );	
 	new QShortcut ( QKeySequence(tr("Ctrl+H", "About TextRoom")), this, SLOT( about() ) );
@@ -250,8 +249,6 @@ void TextRoom::newFile()
 		textEdit->document()->blockSignals(false);
 		
 		setCurrentFile("");
-		textEdit->setUndoRedoEnabled(false);
-		indentFirstLines();
 		textEdit->setUndoRedoEnabled(true);
 		textEdit->document()->setModified(false);
 		horizontalSlider->setVisible(false);
@@ -327,7 +324,6 @@ void TextRoom::loadFile(const QString &fileName)
 	textEdit->document()->blockSignals(true);
 	textEdit->setPlainText("");
 	textEdit->setUndoRedoEnabled(false);
-	indentFirstLines();
 	textEdit->append(str);
 	textEdit->moveCursor(QTextCursor::Start);
 	textEdit->setUndoRedoEnabled(true);
@@ -415,43 +411,27 @@ QString TextRoom::strippedName(const QString &fullFileName)
 	return QFileInfo(fullFileName).fileName();
 }
 
-void TextRoom::indentFirstLines()
+void TextRoom::indentFirstLines(bool &indentstatus)
 {
-	bool disablesound;
-	if (isSound)
-	{
+	int indentsize;
+	bool soundstatus;
+	soundstatus = isSound;
 	isSound = false;
-	disablesound = true;
-	}
-	else
-	{
-	disablesound = false;
-	}
 
-	int valind;
-	if (ind)
-	{
-	ind = false;
-	valind = 50;
-	}
+	if (indentstatus)
+	{	indentsize = 50; }
 	else
-	{
-	ind = true;
-	valind = 0;
-	}
+	{	indentsize = 0;  }
 
 	QTextBlockFormat modifier;
-	modifier.setTextIndent(valind);
+	modifier.setTextIndent(indentsize);
 	modifier.setBottomMargin(10);
 	QTextCursor cursor(textEdit->document());
 	do {
 		cursor.mergeBlockFormat(modifier);
 	} while (cursor.movePosition(QTextCursor::NextBlock));
 
-	if (disablesound)
-	{
-	isSound = true;
-	}
+	isSound = soundstatus;
 }
 
 void TextRoom::getFileStatus()
@@ -568,6 +548,9 @@ void TextRoom::readSettings()
 	isAutoSave = settings.value("AutoSave", false).toBool();
 	isFlowMode = settings.value("FlowMode", false).toBool();
 	isSound = settings.value("Sound", true).toBool();
+	isIndent = settings.value("Indent", true).toBool();
+
+	indentFirstLines(isIndent);	
 
 	horizontalSlider->setVisible( settings.value("EnableScrollBar", true).toBool() );
 	isScrollBarVisible = horizontalSlider->isVisible();
@@ -579,8 +562,6 @@ void TextRoom::readSettings()
 		if ( isSaveCursor = settings.value("RecentFiles/SavePosition", true).toBool() )
 			cPosition = settings.value("RecentFiles/AtPosition", cPosition).toInt();
 	}
-
-
 }
 
 void TextRoom::writeSettings()
@@ -611,7 +592,6 @@ void TextRoom::writeSettings()
 		if ( isSaveCursor )
 			settings.setValue("RecentFiles/AtPosition", cPosition);
 	}
-
 }
 
 void TextRoom::options()

@@ -61,7 +61,7 @@ private slots:
 	void sCursor();
 	void togleFullScreen();
 	void togleEscape();
-	void indentFirstLines();
+	void indentFirstLines(bool &indentstatus);
 	void documentWasModified();	
 	void getFileStatus();
 	void readSettings();
@@ -96,6 +96,7 @@ private:
 	bool isAutoSave;
 	bool isFlowMode;
 	bool isSound;
+	bool isIndent;
 	bool isScrollBarVisible;
 
 protected:

@@ -28,7 +28,6 @@
 #include <QSplashScreen>
 #include <QTimer>
 #include <QtGui>
-#include <QPaintDevice>
  
 #include "textroom.h"
 
