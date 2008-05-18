@@ -1,7 +1,14 @@
 #summary Latest changes.
-#labels Featured
 
 *Changelog:*
+
+_ver.0.2.5beta1 - realtime - 2008-05-18_
+
+  * Added Target Word Count feature.
+
+_ver.0.2.4beta5 - realtime - 2008-05-17_
+
+  * Added typing sounds.
 
 _ver.0.2.4beta4 - realtime - 2008-05-16_
 
