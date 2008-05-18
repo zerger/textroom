@@ -5,8 +5,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>550</width>
-    <height>360</height>
+    <width>568</width>
+    <height>432</height>
    </rect>
   </property>
   <property name="sizePolicy" >
@@ -34,27 +34,11 @@
    <bool>true</bool>
   </property>
   <property name="styleSheet" >
-   <string/>
+   <string notr="true" />
   </property>
   <layout class="QVBoxLayout" >
    <item>
     <layout class="QHBoxLayout" >
-     <item>
-      <spacer>
-       <property name="orientation" >
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeType" >
-        <enum>QSizePolicy::Minimum</enum>
-       </property>
-       <property name="sizeHint" >
-        <size>
-         <width>2</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
      <item>
       <widget class="QTabWidget" name="tabWidget" >
        <property name="sizePolicy" >
@@ -69,20 +53,31 @@
          <height>16777215</height>
         </size>
        </property>
+       <property name="layoutDirection" >
+        <enum>Qt::LeftToRight</enum>
+       </property>
        <property name="currentIndex" >
         <number>0</number>
        </property>
        <widget class="QWidget" name="tab" >
+        <property name="geometry" >
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>544</width>
+          <height>348</height>
+         </rect>
+        </property>
         <attribute name="title" >
          <string>Fonts and colors</string>
         </attribute>
-        <widget class="QWidget" name="" >
+        <widget class="QWidget" name="layoutWidget" >
          <property name="geometry" >
           <rect>
            <x>10</x>
            <y>12</y>
            <width>415</width>
-           <height>224</height>
+           <height>316</height>
           </rect>
          </property>
          <layout class="QVBoxLayout" >
@@ -164,10 +159,20 @@
              </widget>
             </item>
             <item>
-             <widget class="QFontComboBox" name="editorFontComboBox" />
+             <widget class="QFontComboBox" name="editorFontComboBox" >
+              <property name="currentFont" >
+               <font>
+                <family>Courier New</family>
+               </font>
+              </property>
+             </widget>
             </item>
             <item>
-             <widget class="QSpinBox" name="editorSpinBox" />
+             <widget class="QSpinBox" name="editorSpinBox" >
+              <property name="value" >
+               <number>12</number>
+              </property>
+             </widget>
             </item>
             <item>
              <layout class="QHBoxLayout" >
@@ -264,10 +269,20 @@
              </widget>
             </item>
             <item>
-             <widget class="QFontComboBox" name="statusbarFontComboBox" />
+             <widget class="QFontComboBox" name="statusbarFontComboBox" >
+              <property name="currentFont" >
+               <font>
+                <family>DejaVu Sans</family>
+               </font>
+              </property>
+             </widget>
             </item>
             <item>
-             <widget class="QSpinBox" name="statusbarSpinBox" />
+             <widget class="QSpinBox" name="statusbarSpinBox" >
+              <property name="value" >
+               <number>8</number>
+              </property>
+             </widget>
             </item>
             <item>
              <layout class="QHBoxLayout" >
@@ -297,7 +312,7 @@
             <property name="sizeType" >
              <enum>QSizePolicy::Fixed</enum>
             </property>
-            <property name="sizeHint" >
+            <property name="sizeHint" stdset="0" >
              <size>
               <width>413</width>
               <height>20</height>
@@ -381,7 +396,7 @@
             </item>
            </layout>
           </item>
- 		<item>
+          <item>
            <spacer>
             <property name="orientation" >
              <enum>Qt::Vertical</enum>
@@ -389,7 +404,7 @@
             <property name="sizeType" >
              <enum>QSizePolicy::Fixed</enum>
             </property>
-            <property name="sizeHint" >
+            <property name="sizeHint" stdset="0" >
              <size>
               <width>413</width>
               <height>20</height>
@@ -397,10 +412,7 @@
             </property>
            </spacer>
           </item>
-        
-
-
-		<item>
+          <item>
            <layout class="QHBoxLayout" >
             <item>
              <widget class="QPushButton" name="pbStatusBarBgColor" >
@@ -476,7 +488,6 @@
             </item>
            </layout>
           </item>
-
           <item>
            <spacer>
             <property name="orientation" >
@@ -485,7 +496,7 @@
             <property name="sizeType" >
              <enum>QSizePolicy::Fixed</enum>
             </property>
-            <property name="sizeHint" >
+            <property name="sizeHint" stdset="0" >
              <size>
               <width>413</width>
               <height>20</height>
@@ -578,8 +589,8 @@
              </widget>
             </item>
            </layout>
-		</item>
-		<item>
+          </item>
+          <item>
            <spacer>
             <property name="orientation" >
              <enum>Qt::Vertical</enum>
@@ -587,7 +598,7 @@
             <property name="sizeType" >
              <enum>QSizePolicy::Fixed</enum>
             </property>
-            <property name="sizeHint" >
+            <property name="sizeHint" stdset="0" >
              <size>
               <width>413</width>
               <height>20</height>
@@ -595,24 +606,37 @@
             </property>
            </spacer>
           </item>
-
          </layout>
         </widget>
        </widget>
        <widget class="QWidget" name="tab_2" >
+        <property name="geometry" >
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>544</width>
+          <height>348</height>
+         </rect>
+        </property>
         <attribute name="title" >
-         <string>Misc</string>
+         <string>Other settings</string>
         </attribute>
         <widget class="QWidget" name="layoutWidget" >
          <property name="geometry" >
           <rect>
-           <x>10</x>
-           <y>18</y>
-           <width>198</width>
-           <height>221</height>
+           <x>20</x>
+           <y>20</y>
+           <width>201</width>
+           <height>251</height>
           </rect>
          </property>
          <layout class="QVBoxLayout" >
+          <property name="spacing" >
+           <number>10</number>
+          </property>
+          <property name="margin" >
+           <number>4</number>
+          </property>
           <item>
            <widget class="QCheckBox" name="fullScreenCheckBox" >
             <property name="text" >
@@ -637,7 +661,7 @@
               <property name="sizeType" >
                <enum>QSizePolicy::Fixed</enum>
               </property>
-              <property name="sizeHint" >
+              <property name="sizeHint" stdset="0" >
                <size>
                 <width>30</width>
                 <height>20</height>
@@ -687,43 +711,20 @@ p, li { white-space: pre-wrap; }
             </property>
            </widget>
           </item>
-
-	   <item>
-	    <layout class="QHBoxLayout" >
-  		<item>
+          <item>
            <widget class="QCheckBox" name="soundCheckBox" >
             <property name="text" >
              <string>Enable Sound</string>
-              </property>
-              <property name="checked" >
-               <bool>true</bool>
-              </property>
-             </widget>
-            </item>
-		</layout>
-		</item>
-
- 
+            </property>
+            <property name="checked" >
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
          </layout>
         </widget>
        </widget>
       </widget>
-     </item>
-     <item>
-      <spacer>
-       <property name="orientation" >
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeType" >
-        <enum>QSizePolicy::Minimum</enum>
-       </property>
-       <property name="sizeHint" >
-        <size>
-         <width>2</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
      </item>
     </layout>
    </item>
@@ -737,7 +738,7 @@ p, li { white-space: pre-wrap; }
        <property name="sizeType" >
         <enum>QSizePolicy::Expanding</enum>
        </property>
-       <property name="sizeHint" >
+       <property name="sizeHint" stdset="0" >
         <size>
          <width>261</width>
          <height>27</height>
@@ -777,7 +778,7 @@ p, li { white-space: pre-wrap; }
        <property name="sizeType" >
         <enum>QSizePolicy::Minimum</enum>
        </property>
-       <property name="sizeHint" >
+       <property name="sizeHint" stdset="0" >
         <size>
          <width>2</width>
          <height>27</height>
@@ -809,7 +810,6 @@ p, li { white-space: pre-wrap; }
   <tabstop>loadOnStartCheckBox</tabstop>
   <tabstop>splashScreenCheckBox</tabstop>
   <tabstop>autoSaveCheckBox</tabstop>
-  <tabstop>soundCheckBox</tabstop>
  </tabstops>
  <resources/>
  <connections>
