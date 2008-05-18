@@ -1,5 +1,6 @@
 /****************************************************************************
 ** Copyright (C) 2008 Petar Toushkov <peter dot toushkov at gmail.com>
+** Copyright (C) 2008 Omer Bahri Gordebak <gordebak at gmail.com>
 **
 ** Additional help, code and insights by:
 ** adamvert - from http://ubuntuforums.org/
@@ -38,6 +39,12 @@ TextRoom::TextRoom(QWidget *parent, Qt::WFlags f)
 	setupUi(this);
 	setObjectName("textroom");
 	//setProperty("class", "mainwindow QLabel");
+
+	numChanges = 0;
+	prevLength = 0;
+	parasold = 0;
+	//deadline = 0;
+	wordcount = 0;
 
 	readSettings();
 
@@ -119,11 +126,6 @@ TextRoom::TextRoom(QWidget *parent, Qt::WFlags f)
 
 	writeSettings();
 	
-	// auto save counter
-	numChanges = 0;
-	prevLength = 0;
-	parasold = 0;
-
      QTimer *timer = new QTimer(this);
      connect(timer, SIGNAL(timeout()), this, SLOT(getFileStatus()));
      timer->start(1000);
@@ -225,8 +227,8 @@ void TextRoom::closeEvent(QCloseEvent *event)
  
 void TextRoom::about() 
 {
-	QMessageBox::about(this,"About TextRoom RealTime",
-				"TextRoom Editor ver. 0.2.4 beta\n\n"
+	QMessageBox::about(this,"About TextRoom",
+				"TextRoom Editor ver. 0.2.5\n\n"
 		"Project home page: http://code.google.com/p/textroom/\n\n"
 		"Code, help and insights (in alphabetical order) by:\n"
 		"Adamvert (from ubuntuforums.org),\n"
@@ -235,9 +237,7 @@ void TextRoom::about()
 		"Peter Toushkov\n\n"
 		"TextRoom is partially based on\n"
 		"The Phrasis project by Jacob R. Rideout:\n"
-		"http://code.google.com/p/phrasis/\n\n"
-		"TextRoom RealTime is a stripped down version\n"
-		"For writers in mind.\n");
+		"http://code.google.com/p/phrasis/\n\n");
 }
 
 void TextRoom::newFile()
@@ -317,7 +317,6 @@ void TextRoom::loadFile(const QString &fileName)
 	QByteArray data = file.readAll();
 	QTextCodec *codec = QTextCodec::codecForName("UTF-8");
 	QString str = codec->toUnicode(data);
-	str = QString::fromLocal8Bit(data);
 	
 	QApplication::setOverrideCursor(Qt::WaitCursor);
 
@@ -341,6 +340,10 @@ void TextRoom::loadFile(const QString &fileName)
 
 bool TextRoom::maybeSave()
 {
+	if (textEdit->document()->isEmpty())
+	{
+	return true;
+	}
 	if (textEdit->document()->isModified())
 	{
 		QMessageBox::StandardButton ret;
@@ -432,6 +435,9 @@ void TextRoom::indentFirstLines()
 
 void TextRoom::getFileStatus()
 {
+	QString target;
+	int percent;
+	QString percenttext;
 	QString statsLabelStr;
 	QString statsLabelToolTip;
 	QDateTime now = QDateTime::currentDateTime();
@@ -443,7 +449,22 @@ void TextRoom::getFileStatus()
 	QRegExp wordsRX("\\s+");
 	QStringList list = text.split(wordsRX,QString::SkipEmptyParts);
 	const int words = list.count();
-	statsLabel->setText(tr("%1").arg(words) + " Words  " + clock);
+	if (words < wordcount && !wordcount == 0 || words > wordcount)
+	{
+		float f = words*100/wordcount;
+		percent = (int)f;
+		percenttext = percenttext.setNum(percent);
+		target = " of " + wordcounttext + " words (%" + percenttext + ")   ";
+	}
+	else if (words == wordcount)
+	{
+		target = " words. Target reached.   ";
+	}
+	else if (wordcount == 0)
+	{
+		target = " words   ";
+	}
+	statsLabel->setText(tr("%1").arg(words) + target + clock);
 }
 
 void TextRoom::documentWasModified()
@@ -471,9 +492,9 @@ void TextRoom::documentWasModified()
 	QString filenm;	
 
 	if (parasnew > parasold)
-	{ filenm = "keyenter.wav"; }
+	{ filenm = "/usr/local/share/textroom/keyenter.wav"; }
 	else
-	{ filenm = "keyany.wav"; }
+	{ filenm = "/usr/local/share/textroom/keyany.wav"; }
 
 	parasold = parasnew;
 
@@ -557,6 +578,9 @@ void TextRoom::readSettings()
 	isAutoSave = settings.value("AutoSave", false).toBool();
 	isFlowMode = settings.value("FlowMode", false).toBool();
 	isSound = settings.value("Sound", true).toBool();
+	//deadline = settings.value("Deadline").toInt("dd MM yyyy");
+	wordcount = settings.value("WordCount", 0).toInt();
+	wordcounttext = settings.value("WordCount", 0).toString();
 
 	indentFirstLines();	
 

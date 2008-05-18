@@ -93,7 +93,7 @@
        <property name="sizeType" >
         <enum>QSizePolicy::Minimum</enum>
        </property>
-       <property name="sizeHint" >
+       <property name="sizeHint" stdset="0" >
         <size>
          <width>150</width>
          <height>20</height>
@@ -103,6 +103,12 @@
      </item>
      <item>
       <widget class="QTextEdit" name="textEdit" >
+       <property name="sizePolicy" >
+        <sizepolicy vsizetype="Expanding" hsizetype="Expanding" >
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
        <property name="minimumSize" >
         <size>
          <width>320</width>
@@ -111,7 +117,7 @@
        </property>
        <property name="maximumSize" >
         <size>
-         <width>1024</width>
+         <width>1000</width>
          <height>16777215</height>
         </size>
        </property>
@@ -186,7 +192,10 @@
         </palette>
        </property>
        <property name="font" >
-        <font/>
+        <font>
+         <family>Courier New</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="contextMenuPolicy" >
         <enum>Qt::DefaultContextMenu</enum>
@@ -219,10 +228,11 @@
         <enum>QTextEdit::WidgetWidth</enum>
        </property>
        <property name="html" >
-        <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+        <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
 p, li { white-space: pre-wrap; }
-&lt;/style>&lt;/head>&lt;body style=" font-family:'Tahoma'; font-size:10pt; font-weight:400; font-style:normal;">
-&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Monospace';">&lt;/p>&lt;/body>&lt;/html></string>
+&lt;/style>&lt;/head>&lt;body style=" font-family:'Courier New'; font-size:12pt; font-weight:400; font-style:normal;">
+&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Monospace'; font-size:10pt;">&lt;/p>&lt;/body>&lt;/html></string>
        </property>
        <property name="tabStopWidth" >
         <number>50</number>
@@ -230,8 +240,11 @@ p, li { white-space: pre-wrap; }
        <property name="acceptRichText" >
         <bool>false</bool>
        </property>
+       <property name="cursorWidth" >
+        <number>3</number>
+       </property>
        <property name="textInteractionFlags" >
-        <set>Qt::LinksAccessibleByMouse|Qt::NoTextInteraction|Qt::TextEditable|Qt::TextEditorInteraction|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
+        <set>Qt::LinksAccessibleByMouse|Qt::TextEditable|Qt::TextEditorInteraction|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
        </property>
       </widget>
      </item>
@@ -243,7 +256,7 @@ p, li { white-space: pre-wrap; }
        <property name="sizeType" >
         <enum>QSizePolicy::Minimum</enum>
        </property>
-       <property name="sizeHint" >
+       <property name="sizeHint" stdset="0" >
         <size>
          <width>150</width>
          <height>20</height>
@@ -255,6 +268,12 @@ p, li { white-space: pre-wrap; }
    </item>
    <item>
     <layout class="QHBoxLayout" >
+     <property name="spacing" >
+      <number>6</number>
+     </property>
+     <property name="leftMargin" >
+      <number>0</number>
+     </property>
      <item>
       <widget class="QLabel" name="label" >
        <property name="palette" >
@@ -322,10 +341,13 @@ p, li { white-space: pre-wrap; }
         </palette>
        </property>
        <property name="font" >
-        <font/>
+        <font>
+         <family>Bookman Old Style</family>
+         <pointsize>8</pointsize>
+        </font>
        </property>
        <property name="autoFillBackground" >
-        <bool>true</bool>
+        <bool>false</bool>
        </property>
        <property name="text" >
         <string>untitled.txt</string>
@@ -340,9 +362,9 @@ p, li { white-space: pre-wrap; }
        <property name="sizeType" >
         <enum>QSizePolicy::MinimumExpanding</enum>
        </property>
-       <property name="sizeHint" >
+       <property name="sizeHint" stdset="0" >
         <size>
-         <width>20</width>
+         <width>50</width>
          <height>20</height>
         </size>
        </property>
@@ -481,9 +503,9 @@ p, li { white-space: pre-wrap; }
        <property name="sizeType" >
         <enum>QSizePolicy::MinimumExpanding</enum>
        </property>
-       <property name="sizeHint" >
+       <property name="sizeHint" stdset="0" >
         <size>
-         <width>20</width>
+         <width>50</width>
          <height>20</height>
         </size>
        </property>
@@ -556,7 +578,9 @@ p, li { white-space: pre-wrap; }
         </palette>
        </property>
        <property name="font" >
-        <font/>
+        <font>
+         <family>Bookman Old Style</family>
+        </font>
        </property>
        <property name="layoutDirection" >
         <enum>Qt::LeftToRight</enum>
@@ -565,7 +589,7 @@ p, li { white-space: pre-wrap; }
         <bool>true</bool>
        </property>
        <property name="text" >
-        <string>0 / 0 / 0 / 0</string>
+        <string>                   </string>
        </property>
       </widget>
      </item>

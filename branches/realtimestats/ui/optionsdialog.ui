@@ -57,7 +57,7 @@
         <enum>Qt::LeftToRight</enum>
        </property>
        <property name="currentIndex" >
-        <number>0</number>
+        <number>1</number>
        </property>
        <widget class="QWidget" name="tab" >
         <property name="geometry" >
@@ -720,6 +720,43 @@ p, li { white-space: pre-wrap; }
              <bool>false</bool>
             </property>
            </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="verticalLayoutWidget" >
+         <property name="geometry" >
+          <rect>
+           <x>290</x>
+           <y>40</y>
+           <width>160</width>
+           <height>80</height>
+          </rect>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout" >
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout" >
+            <item>
+             <widget class="QLabel" name="label_2" >
+              <property name="text" >
+               <string>Target Word Count:</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_2" >
+            <item>
+             <widget class="QSpinBox" name="wordCountSpinBox" >
+              <property name="maximum" >
+               <number>200000</number>
+              </property>
+              <property name="singleStep" >
+               <number>50</number>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </item>
          </layout>
         </widget>

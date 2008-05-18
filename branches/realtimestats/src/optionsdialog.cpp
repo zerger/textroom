@@ -1,5 +1,6 @@
 /****************************************************************************
 ** Copyright (C) 2008 Petar Toushkov <peter dot toushkov at gmail.com>
+** Copyright (C) 2008 Omer Bahri Gordebak <gordebak at gmail.com>
 **
 ** Additional help, code and insights by:
 ** adamvert - from http://ubuntuforums.org/
@@ -36,6 +37,7 @@ OptionsDialog::OptionsDialog(QWidget *parent)
 	reaSettings();
 
 	connect(ui.statusbarSpinBox, SIGNAL( valueChanged(int) ), this, SLOT( activateApply() ) );
+	connect(ui.wordCountSpinBox, SIGNAL( valueChanged(int) ), this, SLOT( activateApply() ) );
 	connect(ui.editorSpinBox, SIGNAL( valueChanged(int) ), this, SLOT( activateApply() ) );
 	connect(ui.soundCheckBox, SIGNAL( clicked() ), this, SLOT( activateApply() ) );
 	connect(ui.editorBoldCheckBox, SIGNAL( clicked() ), this, SLOT( activateApply() ) );
@@ -51,6 +53,8 @@ OptionsDialog::OptionsDialog(QWidget *parent)
 	connect(ui.flowModeCheckBox, SIGNAL( clicked() ), this, SLOT( activateApply() ) );
 	connect(ui.editorFontComboBox, SIGNAL( activated(int) ), this, SLOT( activateApply() ) );
 	connect(ui.statusbarFontComboBox, SIGNAL( activated(int) ), this, SLOT( activateApply() ) );
+	//connect(ui.calendarWidget, SIGNAL( selectedDateChanged() ), this, SLOT(activateApply() ) );
+	//connect(ui.lineEdit, SIGNAL( textChanged() ), this, SLOT(activateApply() ) );
 
 }
 
@@ -107,6 +111,10 @@ void OptionsDialog::reaSettings()
 	if ( !ui.loadOnStartCheckBox->isChecked() )
 		ui.saveCursorCheckBox->setEnabled( false );
 
+	//ui.calendarWidget->setSelectedDate( settings.value("Deadline").toString("dd MM yyyy") );
+	//ui.lineEdit->setText( settings.value("WordCount", 0));
+
+	ui.wordCountSpinBox->setValue( settings.value("WordCount", 0).toInt());
 	ui.fullScreenCheckBox->setChecked( settings.value("WindowState/ShowFullScreen", true).toBool() );
 	ui.splashScreenCheckBox->setChecked( settings.value("WindowState/ShowSplashScreen", true).toBool() );
 	ui.soundCheckBox->setChecked( settings.value("Sound", true).toBool() );
@@ -170,7 +178,10 @@ void OptionsDialog::writSettings()
 	settings.setValue("Sound", ui.soundCheckBox->isChecked() );
 	settings.setValue("AutoSave", ui.autoSaveCheckBox->isChecked() );
 	settings.setValue("FlowMode", ui.flowModeCheckBox->isChecked() );
+	settings.setValue("WordCount", ui.wordCountSpinBox->value() );
 	settings.setValue("EnableScrollBar", ui.scrollBarCheckBox->isChecked() );
+	//settings.setValue("Deadline", ui.calendarWidget.selectedDate() );
+	//settings.setValue("WordCount", ui.lineEdit->text() );
 	
 	QFont font;
 	

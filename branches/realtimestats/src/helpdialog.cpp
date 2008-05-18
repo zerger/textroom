@@ -1,5 +1,6 @@
 /****************************************************************************
 ** Copyright (C) 2008 Petar Toushkov <peter dot toushkov at gmail.com>
+** Copyright (C) 2008 Omer Bahri Gordebak <gordebak at gmail.com>
 **
 ** Additional help, code and insights by:
 ** adamvert - from http://ubuntuforums.org/
@@ -63,7 +64,7 @@ HelpDialog::HelpDialog(QWidget *parent) : QDialog(parent)
 					"Ctrl+V - Paste\n"
 					"Ctrl+A - Select All\n"
 					"Ctrl+Z - Undo (Ctrl+Shift+Z to Redo)\n"
-					"Ctrl+I - Indent first lines (useful due to unresolved bug)\n"
+					"Ctrl+I - Indent first lines\n"
 					"Shift+F4 - Go back to cursor position\n"
 					"Ctrl+F - Find\n"
 					"F3 - Find next\n"
