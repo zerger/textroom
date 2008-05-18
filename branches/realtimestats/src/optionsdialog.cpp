@@ -53,7 +53,7 @@ OptionsDialog::OptionsDialog(QWidget *parent)
 	connect(ui.flowModeCheckBox, SIGNAL( clicked() ), this, SLOT( activateApply() ) );
 	connect(ui.editorFontComboBox, SIGNAL( activated(int) ), this, SLOT( activateApply() ) );
 	connect(ui.statusbarFontComboBox, SIGNAL( activated(int) ), this, SLOT( activateApply() ) );
-	//connect(ui.calendarWidget, SIGNAL( selectedDateChanged() ), this, SLOT(activateApply() ) );
+	connect(ui.calendarWidget, SIGNAL( selectionChanged() ), this, SLOT( activateApply() ) );
 	//connect(ui.lineEdit, SIGNAL( textChanged() ), this, SLOT(activateApply() ) );
 
 }
@@ -87,6 +87,8 @@ void OptionsDialog::reaSettings()
 	QSettings settings;
 #endif
 
+	QDateTime today = QDateTime::currentDateTime();
+	QString todaytext = today.toString("yyyyMMdd");
 	QStringList fontS;
 	QFont font;
 
@@ -111,9 +113,6 @@ void OptionsDialog::reaSettings()
 	if ( !ui.loadOnStartCheckBox->isChecked() )
 		ui.saveCursorCheckBox->setEnabled( false );
 
-	//ui.calendarWidget->setSelectedDate( settings.value("Deadline").toString("dd MM yyyy") );
-	//ui.lineEdit->setText( settings.value("WordCount", 0));
-
 	ui.wordCountSpinBox->setValue( settings.value("WordCount", 0).toInt());
 	ui.fullScreenCheckBox->setChecked( settings.value("WindowState/ShowFullScreen", true).toBool() );
 	ui.splashScreenCheckBox->setChecked( settings.value("WindowState/ShowSplashScreen", true).toBool() );
@@ -121,12 +120,16 @@ void OptionsDialog::reaSettings()
 	ui.autoSaveCheckBox->setChecked( settings.value("AutoSave", false).toBool() );
 	ui.flowModeCheckBox->setChecked( settings.value("FlowMode", false).toBool() );
 	ui.scrollBarCheckBox->setChecked( settings.value("EnableScrollBar", true).toBool() );
+	QString datetext = settings.value("Deadline", todaytext).toString();
+	QDate date;
+	QDate dateselected = date.fromString(datetext, "yyyyMMdd");
+	ui.calendarWidget->setSelectedDate(dateselected);
+		
 	if ( !ui.scrollBarCheckBox->isChecked() )
 	{
 		ui.scrollBarColorLabel->setEnabled(false);
 		ui.pbScrollBarColor->setEnabled(false);
 	}
-
 
 	QPalette palette;
 
@@ -180,8 +183,8 @@ void OptionsDialog::writSettings()
 	settings.setValue("FlowMode", ui.flowModeCheckBox->isChecked() );
 	settings.setValue("WordCount", ui.wordCountSpinBox->value() );
 	settings.setValue("EnableScrollBar", ui.scrollBarCheckBox->isChecked() );
-	//settings.setValue("Deadline", ui.calendarWidget.selectedDate() );
-	//settings.setValue("WordCount", ui.lineEdit->text() );
+	settings.setValue("Deadline", ui.calendarWidget->selectedDate().toString("yyyyMMdd"));
+
 	
 	QFont font;
 	

@@ -92,14 +92,6 @@ TextRoom::TextRoom(QWidget *parent, Qt::WFlags f)
 	connect(textEdit->document(), SIGNAL(contentsChanged()),
 			this, SLOT(documentWasModified()));
 
-//	connect(textEdit, SIGNAL(cursorPositionChanged()), this, SLOT(vPositionChanged()));
-
-	connect(textEdit->verticalScrollBar(), SIGNAL(valueChanged(int)), this, SLOT(vPositionChanged()));
-
-	connect(horizontalSlider, SIGNAL(valueChanged(int)),
-			this, SLOT(hSliderPositionChanged()));
-
-
 	// check if we need to open some file at startup
 	const QStringList args = QCoreApplication::arguments();
 	if (args.count() == 2)
@@ -146,7 +138,7 @@ void TextRoom::paintEvent(QPaintEvent *)
 	int clr = statbg.mid(1, 6).toInt(&ok, 16);
 	int x = width();
 	int y = height();
-	int top = y-36;
+	int top = y-34;
 	QPainter painter(this);
 	painter.setBrush(QColor(QRgb(clr)));
 	painter.drawRect(0, top, x, y);
@@ -252,7 +244,6 @@ void TextRoom::newFile()
 		setCurrentFile("");
 		textEdit->setUndoRedoEnabled(true);
 		textEdit->document()->setModified(false);
-		horizontalSlider->setVisible(false);
 		textEdit->verticalScrollBar()->setValue(0);
 
 	}
@@ -335,7 +326,6 @@ void TextRoom::loadFile(const QString &fileName)
 	setCurrentFile(fileName);
 	getFileStatus();
 
-	vPositionChanged();
 }
 
 bool TextRoom::maybeSave()
@@ -435,7 +425,277 @@ void TextRoom::indentFirstLines()
 
 void TextRoom::getFileStatus()
 {
+	QString showdeadline;
+	QString targetday = deadline.toString("dd");
+	QString targetmonth = deadline.toString("MM");
+	QString targetyear = deadline.toString("yyyy");
 	QString target;
+	int targetdayint = targetday.toInt();
+	int targetmonthint = targetmonth.toInt();
+	int targetyearint = targetyear.toInt();
+	today = QDate::currentDate();
+	QString daytoday = today.toString("dd");
+	QString thismonth = today.toString("MM");
+	QString thisyear = today.toString("yyyy");
+	int daytodayint = daytoday.toInt();
+	int thismonthint = thismonth.toInt(); 
+	int thisyearint = thisyear.toInt();
+	int daysremaining = (targetdayint-daytodayint);
+	int monthsremaining = targetmonthint-thismonthint;
+	int yearsremaining = targetyearint-thisyearint;
+	QString daysto;
+	daysto.setNum(daysremaining);
+	QString monthsto;
+	monthsto.setNum(monthsremaining);
+	QString yearsto;
+	yearsto.setNum(yearsremaining);
+	if (yearsremaining < 0)
+	{
+		showdeadline = "";
+	}
+	else if (yearsremaining == 0 && monthsremaining <0)
+	{
+		showdeadline="";
+	}
+	else if (yearsremaining == 0 && monthsremaining==0)
+	{
+		if (daysremaining<=0)
+		{
+		showdeadline="";
+		}
+		if (daysremaining>0)
+		{
+		showdeadline = daysto + " Day(s) remaining to deadline.";
+		}
+	}
+	else if (yearsremaining == 0 && monthsremaining > 0)
+	{
+		if (daysremaining == 0)
+		{
+			showdeadline = monthsto + " Month(s) remaining to deadline.";
+		}
+		if (daysremaining > 0)
+		{
+			showdeadline = monthsto + " Month(s), " + daysto + " Day(s) remaining to deadline.";
+		}
+		if (daysremaining < 0)
+		{
+			QString monthstominusone;
+			monthstominusone.setNum(monthsremaining-1);
+			QString ismonths;
+			if (monthsremaining-1 == 0)
+			{
+				ismonths = "";
+			}
+			if (monthsremaining-1 > 0)
+			{
+				ismonths = monthstominusone + " Month(s), ";
+			}
+		if (thismonthint == 1 || thismonthint == 3 || thismonthint == 5 || thismonthint == 7 || thismonthint == 8 || thismonthint == 10 ||thismonthint == 12)
+		{
+			QString daystoplusthirtyone;
+			daystoplusthirtyone.setNum(daysremaining+31);
+			showdeadline = ismonths + daystoplusthirtyone + " Day(s) remaining to deadline.";
+		}
+		if (thismonthint == 2)
+		{
+			int daystoplusonefebruary;
+			daystoplusonefebruary = daysremaining + 28;
+			if (yearsremaining%4==0)
+			{
+				daystoplusonefebruary = daystoplusonefebruary + 1;
+			}
+			QString daysforfebruary;
+			daysforfebruary.setNum(daystoplusonefebruary);
+			showdeadline = ismonths + daysforfebruary + " Day(s) remaining for deadline.";
+		}
+		if (thismonthint == 4 || thismonthint == 6 || thismonthint == 9 || thismonthint == 11)
+		{
+			int daystoplusthirty;
+			daystoplusthirty = daysremaining + 30;
+			QString daysforothers;
+			daysforothers.setNum(daystoplusthirty);
+			showdeadline = ismonths + daysforothers + " Day(s) remaining to deadline.";
+		}
+
+		}
+	}
+	else if (yearsremaining > 0 && monthsremaining > 0)
+	{
+		if (daysremaining == 0)
+		{
+		showdeadline= monthsto + " Month(s) remaining to deadline.";			
+		}
+		if (daysremaining > 0)
+		{
+		showdeadline = monthsto + " Month(s), " + daysto + " Day(s) remaining to deadline.";			
+		}
+		if (daysremaining<0)
+		{
+		QString isyears;
+		if (yearsremaining == 0)
+		{
+			isyears = "";
+		}
+		else
+		isyears = yearsto + " Year(s), ";
+		QString monthstominusone;
+		monthstominusone.setNum(monthsremaining-1);
+		QString ismonths;
+		if (monthsremaining-1 == 0)
+		{
+			ismonths = "";			
+		}
+		else
+		{
+			ismonths = monthstominusone + " Month(s), ";
+		}
+		if (thismonthint == 1 || thismonthint == 3 || thismonthint == 5 || thismonthint == 7 || thismonthint == 8 || thismonthint == 10 ||thismonthint == 12)
+		{
+			
+			QString daystoplusthirtyone;
+			daystoplusthirtyone.setNum(daysremaining+31);
+			showdeadline = isyears + ismonths + daystoplusthirtyone + " Day(s) remaining to deadline.";
+		}
+		if (thismonthint == 2)
+		{
+			int daystoplusonefebruary;
+			daystoplusonefebruary = daysremaining + 28;
+			if (yearsremaining%4==0)
+			{
+				daystoplusonefebruary = daystoplusonefebruary + 1;
+			}
+			QString daysforfebruary;
+			daysforfebruary.setNum(daystoplusonefebruary);
+			showdeadline = isyears + ismonths + daysforfebruary + " Day(s) remaining for deadline.";
+		}
+		if (thismonthint == 4 || thismonthint == 6 || thismonthint == 9 || thismonthint == 11)
+		{
+			int daystoplusthirty;
+			daystoplusthirty = daysremaining + 30;
+			QString daysforothers;
+			daysforothers.setNum(daystoplusthirty);
+			showdeadline = isyears  + ismonths + daysforothers + " Day(s) remaining to deadline.";
+		}
+	}
+	}
+	else if (yearsremaining > 0 && monthsremaining == 0)
+	{
+		if (daysremaining == 0)
+		{
+			showdeadline = yearsto + " Year(s) remaining to deadline.";
+		}
+		if (daysremaining > 0)
+		{
+			showdeadline = yearsto + " Year(s), " + daysto + " Day(s) remaining to deadline."; 
+		}
+		if (daysremaining < 0)
+		{
+			QString isyears;
+			isyears.setNum(yearsremaining-1);
+			QString monthstopluseleven;
+			monthstopluseleven.setNum(monthsremaining+11);
+			if (yearsremaining-1 == 0)
+			{
+			isyears="";
+			}
+		QString ismonths = monthstopluseleven + " Month(s), ";
+		if (thismonthint == 1 || thismonthint == 3 || thismonthint == 5 || thismonthint == 7 || thismonthint == 8 || thismonthint == 10 ||thismonthint == 12)
+		{
+			
+			QString daystoplusthirtyone;
+			daystoplusthirtyone.setNum(daysremaining+31);
+			showdeadline = isyears + ismonths + daystoplusthirtyone + " Day(s) remaining to deadline.";
+		}
+		if (thismonthint == 2)
+		{
+			int daystoplusonefebruary;
+			daystoplusonefebruary = daysremaining + 28;
+			if (thisyearint%4==0)
+			{
+				daystoplusonefebruary = daystoplusonefebruary + 1;
+			}
+			QString daysforfebruary;
+			daysforfebruary.setNum(daystoplusonefebruary);
+			showdeadline = isyears + ismonths + daysforfebruary + " Day(s) remaining for deadline.";
+		}
+		if (thismonthint == 4 || thismonthint == 6 || thismonthint == 9 || thismonthint == 11)
+		{
+			int daystoplusthirty;
+			daystoplusthirty = daysremaining + 30;
+			QString daysforothers;
+			daysforothers.setNum(daystoplusthirty);
+			showdeadline = isyears  + ismonths + daysforothers + " Day(s) remaining to deadline.";
+		}
+	}
+}
+	else if (yearsremaining > 0 && monthsremaining < 0)
+	{
+		QString yearstominusone;
+		yearstominusone.setNum(yearsremaining-1);
+		QString isyears = yearstominusone + " Year(s), ";
+		if (daysremaining==0)
+		{
+			QString monthstoplustwelve;
+			monthstoplustwelve.setNum(monthsremaining+12);
+			if (yearsremaining-1 == 0)
+			{
+				isyears="";
+			}
+			showdeadline= isyears + monthstoplustwelve + " Month(s) remaining to deadline.";
+		}
+		if (daysremaining < 0)
+		{
+			QString monthstopluseleven;
+			monthstopluseleven.setNum(monthsremaining+11);
+			if (yearsremaining-1 == 0)
+			{
+			isyears="";
+			}
+		QString ismonths = monthstopluseleven + " Month(s), ";
+		if (thismonthint == 1 || thismonthint == 3 || thismonthint == 5 || thismonthint == 7 || thismonthint == 8 || thismonthint == 10 ||thismonthint == 12)
+		{
+			
+			QString daystoplusthirtyone;
+			daystoplusthirtyone.setNum(daysremaining+31);
+			showdeadline = isyears + ismonths + daystoplusthirtyone + " Day(s) remaining to deadline.";
+		}
+		if (thismonthint == 2)
+		{
+			int daystoplusonefebruary;
+			daystoplusonefebruary = daysremaining + 28;
+			if (thisyearint%4==0)
+			{
+				daystoplusonefebruary = daystoplusonefebruary + 1;
+			}
+			QString daysforfebruary;
+			daysforfebruary.setNum(daystoplusonefebruary);
+			showdeadline = isyears + ismonths + daysforfebruary + " Day(s) remaining for deadline.";
+		}
+		if (thismonthint == 4 || thismonthint == 6 || thismonthint == 9 || thismonthint == 11)
+		{
+			int daystoplusthirty;
+			daystoplusthirty = daysremaining + 30;
+			QString daysforothers;
+			daysforothers.setNum(daystoplusthirty);
+			showdeadline = isyears  + ismonths + daysforothers + " Day(s) remaining to deadline.";
+		}
+		}
+		if (daysremaining > 0)
+		{
+		int yearstominusone = yearsremaining - 1;
+		QString monthstoplustwelve;
+		monthstoplustwelve.setNum(monthsremaining+12);
+		if (yearstominusone == 0)
+		{
+			showdeadline = monthstoplustwelve + " Month(s), " + daysto + " Day(s) remaining to deadline.";
+		}
+		if (yearstominusone > 0)
+		{
+			showdeadline = yearstominusone + " Year(s), " + monthstoplustwelve + " Month(s), " + daysto +" Day(s) remaining to deadline.";
+		}
+		}
+	}
 	int percent;
 	QString percenttext;
 	QString statsLabelStr;
@@ -453,10 +713,6 @@ void TextRoom::getFileStatus()
 	{
 		target = " words.   ";
 	}
-	else if (words == wordcount)
-	{
-		target = " words. Target reached.   ";
-	}
 	else if (words < wordcount || words > wordcount)
 	{
 		float f = words*100/wordcount;
@@ -464,7 +720,7 @@ void TextRoom::getFileStatus()
 		percenttext = percenttext.setNum(percent);
 		target = " of " + wordcounttext + " words (%" + percenttext + ")   ";
 	}
-	statsLabel->setText(tr("%1").arg(words) + target + clock);
+	statsLabel->setText(showdeadline + tr("%1").arg(words) + target + clock);
 }
 
 void TextRoom::documentWasModified()
@@ -500,7 +756,6 @@ void TextRoom::documentWasModified()
 
 	playSound(filenm);
 	
-	vPositionChanged();
 
 	getFileStatus();
 }
@@ -575,18 +830,18 @@ void TextRoom::readSettings()
 	curDir = settings.value("RecentFiles/LastDir", curDir).toString();
 	lastSearch = settings.value("TextSearch/LastPhrase", lastSearch).toString();
 
+	QDateTime today = QDateTime::currentDateTime();
+	QString todaytext = today.toString("yyyyMMdd");
+
 	isAutoSave = settings.value("AutoSave", false).toBool();
 	isFlowMode = settings.value("FlowMode", false).toBool();
 	isSound = settings.value("Sound", true).toBool();
-	//deadline = settings.value("Deadline").toInt("dd MM yyyy");
+	deadlinetext = settings.value("Deadline", todaytext).toString();
+	deadline = QDate::fromString(deadlinetext, "yyyyMMdd");
 	wordcount = settings.value("WordCount", 0).toInt();
 	wordcounttext = settings.value("WordCount", 0).toString();
 
 	indentFirstLines();	
-
-	horizontalSlider->setVisible( settings.value("EnableScrollBar", true).toBool() );
-	isScrollBarVisible = horizontalSlider->isVisible();
-	vPositionChanged();
 
 	if ( optOpenLastFile = settings.value("RecentFiles/OpenLastFile", true).toBool() )
 	{
@@ -644,7 +899,6 @@ void TextRoom::loadStyleSheet(const QString &fcolor, const QString &bcolor, cons
 	palette.setColor(QPalette::Text, fcolor);
 	palette.setColor(QPalette::Base, bcolor);
 	textEdit->setPalette(palette);
-	horizontalSlider->setPalette(palette);
 
 	palette.setColor(QPalette::Window, bcolor);
 	TextRoom::setPalette(palette);
@@ -658,10 +912,8 @@ void TextRoom::loadStyleSheet(const QString &fcolor, const QString &bcolor, cons
 
 	label->setPalette(palette2);
 	statsLabel->setPalette(palette2);
-	horizontalSlider->setPalette(palette2);
 
 	palette2.setColor(QPalette::Button, sbcolor);
-	horizontalSlider->setPalette(palette2);
 
 }
 
@@ -698,25 +950,10 @@ void TextRoom::sCursor()
 	textEdit->ensureCursorVisible();
 }
 
-void TextRoom::vPositionChanged()
-{
-	horizontalSlider->setMinimum(textEdit->verticalScrollBar()->minimum());
-	horizontalSlider->setMaximum(textEdit->verticalScrollBar()->maximum());
-	if ( isScrollBarVisible )
-		horizontalSlider->setVisible(textEdit->verticalScrollBar()->maximum());
-	horizontalSlider->setValue( textEdit->verticalScrollBar()->value());
-}
-
-void TextRoom::hSliderPositionChanged()
-{
-	textEdit->verticalScrollBar()->setValue( horizontalSlider->value() );
-}
-
 void TextRoom::resizeEvent(QResizeEvent *event)
 {
 	update();
 	sCursor();
-	vPositionChanged();
 	QWidget::resizeEvent(event);
 
 }

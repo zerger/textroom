@@ -66,8 +66,6 @@ private slots:
 	void documentWasModified();	
 	void getFileStatus();
 	void readSettings();
-	void vPositionChanged();
-	void hSliderPositionChanged();
 	void loadStyleSheet(const QString &fcolor, const QString &bcolor, const QString &sbgcolor, const QString &scolor, const QString &sbcolor);
 
 private:
@@ -87,7 +85,9 @@ private:
 	QString curDir;
 	QString lastSearch;
 	QString text;
-	//QString deadline;
+	QString deadlinetext;
+	QDate deadline;
+	QDate today;
 	int wordcount;
 	QString wordcounttext;
 	int sentenceTally;
