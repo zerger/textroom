@@ -449,20 +449,20 @@ void TextRoom::getFileStatus()
 	QRegExp wordsRX("\\s+");
 	QStringList list = text.split(wordsRX,QString::SkipEmptyParts);
 	const int words = list.count();
-	if (words < wordcount && !wordcount == 0 || words > wordcount)
+	if (wordcount == 0)
 	{
-		float f = words*100/wordcount;
-		percent = (int)f;
-		percenttext = percenttext.setNum(percent);
-		target = " of " + wordcounttext + " words (%" + percenttext + ")   ";
+		target = " words.   ";
 	}
 	else if (words == wordcount)
 	{
 		target = " words. Target reached.   ";
 	}
-	else if (wordcount == 0)
+	else if (words < wordcount || words > wordcount)
 	{
-		target = " words   ";
+		float f = words*100/wordcount;
+		percent = (int)f;
+		percenttext = percenttext.setNum(percent);
+		target = " of " + wordcounttext + " words (%" + percenttext + ")   ";
 	}
 	statsLabel->setText(tr("%1").arg(words) + target + clock);
 }
