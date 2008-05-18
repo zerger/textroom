@@ -725,7 +725,8 @@ void TextRoom::getFileStatus()
 		percenttext = percenttext.setNum(percent);
 		target = " of " + wordcounttext + " words  (%" + percenttext + ")   ";
 	}
-	statsLabel->setText(showdeadline + remain + tr("%1").arg(words) + target + clock);
+	statsLabel->setText(tr("%1").arg(words) + target + clock);
+	deadlineLabel->setText(showdeadline + remain);
 }
 
 void TextRoom::documentWasModified()
@@ -824,6 +825,7 @@ void TextRoom::readSettings()
 	if (!(statsLabel->font() == font))
 	{
 		statsLabel->setFont( font );
+		deadlineLabel->setFont ( font) ;
 		//statsLabel->setProperty("class", "mainwindow QLabel");
 	}
 
@@ -917,6 +919,7 @@ void TextRoom::loadStyleSheet(const QString &fcolor, const QString &bcolor, cons
 
 	label->setPalette(palette2);
 	statsLabel->setPalette(palette2);
+	deadlineLabel->setPalette(palette2);
 
 	palette2.setColor(QPalette::Button, sbcolor);
 
