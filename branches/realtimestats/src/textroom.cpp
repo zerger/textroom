@@ -465,18 +465,18 @@ void TextRoom::getFileStatus()
 		}
 		if (daysremaining>0)
 		{
-		showdeadline = daysto + " Day(s) remaining to deadline.";
+		showdeadline = daysto + " Day(s) ";
 		}
 	}
 	else if (yearsremaining == 0 && monthsremaining > 0)
 	{
 		if (daysremaining == 0)
 		{
-			showdeadline = monthsto + " Month(s) remaining to deadline.";
+			showdeadline = monthsto + " Month(s) ";
 		}
 		if (daysremaining > 0)
 		{
-			showdeadline = monthsto + " Month(s), " + daysto + " Day(s) remaining to deadline.";
+			showdeadline = monthsto + " Month(s), " + daysto + " Day(s) ";
 		}
 		if (daysremaining < 0)
 		{
@@ -495,7 +495,7 @@ void TextRoom::getFileStatus()
 		{
 			QString daystoplusthirtyone;
 			daystoplusthirtyone.setNum(daysremaining+31);
-			showdeadline = ismonths + daystoplusthirtyone + " Day(s) remaining to deadline.";
+			showdeadline = ismonths + daystoplusthirtyone + " Day(s) ";
 		}
 		if (thismonthint == 2)
 		{
@@ -507,7 +507,7 @@ void TextRoom::getFileStatus()
 			}
 			QString daysforfebruary;
 			daysforfebruary.setNum(daystoplusonefebruary);
-			showdeadline = ismonths + daysforfebruary + " Day(s) remaining for deadline.";
+			showdeadline = ismonths + daysforfebruary + " Day(s) ";
 		}
 		if (thismonthint == 4 || thismonthint == 6 || thismonthint == 9 || thismonthint == 11)
 		{
@@ -515,7 +515,7 @@ void TextRoom::getFileStatus()
 			daystoplusthirty = daysremaining + 30;
 			QString daysforothers;
 			daysforothers.setNum(daystoplusthirty);
-			showdeadline = ismonths + daysforothers + " Day(s) remaining to deadline.";
+			showdeadline = ismonths + daysforothers + " Day(s) ";
 		}
 
 		}
@@ -524,11 +524,11 @@ void TextRoom::getFileStatus()
 	{
 		if (daysremaining == 0)
 		{
-		showdeadline= monthsto + " Month(s) remaining to deadline.";			
+		showdeadline= monthsto + " Month(s)  ";			
 		}
 		if (daysremaining > 0)
 		{
-		showdeadline = monthsto + " Month(s), " + daysto + " Day(s) remaining to deadline.";			
+		showdeadline = monthsto + " Month(s), " + daysto + " Day(s) ";			
 		}
 		if (daysremaining<0)
 		{
@@ -555,7 +555,7 @@ void TextRoom::getFileStatus()
 			
 			QString daystoplusthirtyone;
 			daystoplusthirtyone.setNum(daysremaining+31);
-			showdeadline = isyears + ismonths + daystoplusthirtyone + " Day(s) remaining to deadline.";
+			showdeadline = isyears + ismonths + daystoplusthirtyone + " Day(s) ";
 		}
 		if (thismonthint == 2)
 		{
@@ -567,7 +567,7 @@ void TextRoom::getFileStatus()
 			}
 			QString daysforfebruary;
 			daysforfebruary.setNum(daystoplusonefebruary);
-			showdeadline = isyears + ismonths + daysforfebruary + " Day(s) remaining for deadline.";
+			showdeadline = isyears + ismonths + daysforfebruary + " Day(s) ";
 		}
 		if (thismonthint == 4 || thismonthint == 6 || thismonthint == 9 || thismonthint == 11)
 		{
@@ -575,7 +575,7 @@ void TextRoom::getFileStatus()
 			daystoplusthirty = daysremaining + 30;
 			QString daysforothers;
 			daysforothers.setNum(daystoplusthirty);
-			showdeadline = isyears  + ismonths + daysforothers + " Day(s) remaining to deadline.";
+			showdeadline = isyears  + ismonths + daysforothers + " Day(s) ";
 		}
 	}
 	}
@@ -583,11 +583,11 @@ void TextRoom::getFileStatus()
 	{
 		if (daysremaining == 0)
 		{
-			showdeadline = yearsto + " Year(s) remaining to deadline.";
+			showdeadline = yearsto + " Year(s) ";
 		}
 		if (daysremaining > 0)
 		{
-			showdeadline = yearsto + " Year(s), " + daysto + " Day(s) remaining to deadline."; 
+			showdeadline = yearsto + " Year(s), " + daysto + " Day(s) "; 
 		}
 		if (daysremaining < 0)
 		{
@@ -605,7 +605,7 @@ void TextRoom::getFileStatus()
 			
 			QString daystoplusthirtyone;
 			daystoplusthirtyone.setNum(daysremaining+31);
-			showdeadline = isyears + ismonths + daystoplusthirtyone + " Day(s) remaining to deadline.";
+			showdeadline = isyears + ismonths + daystoplusthirtyone + " Day(s) ";
 		}
 		if (thismonthint == 2)
 		{
@@ -617,7 +617,7 @@ void TextRoom::getFileStatus()
 			}
 			QString daysforfebruary;
 			daysforfebruary.setNum(daystoplusonefebruary);
-			showdeadline = isyears + ismonths + daysforfebruary + " Day(s) remaining for deadline.";
+			showdeadline = isyears + ismonths + daysforfebruary + " Day(s) ";
 		}
 		if (thismonthint == 4 || thismonthint == 6 || thismonthint == 9 || thismonthint == 11)
 		{
@@ -625,7 +625,7 @@ void TextRoom::getFileStatus()
 			daystoplusthirty = daysremaining + 30;
 			QString daysforothers;
 			daysforothers.setNum(daystoplusthirty);
-			showdeadline = isyears  + ismonths + daysforothers + " Day(s) remaining to deadline.";
+			showdeadline = isyears  + ismonths + daysforothers + " Day(s) ";
 		}
 	}
 }
@@ -642,7 +642,7 @@ void TextRoom::getFileStatus()
 			{
 				isyears="";
 			}
-			showdeadline= isyears + monthstoplustwelve + " Month(s) remaining to deadline.";
+			showdeadline= isyears + monthstoplustwelve + " Month(s) ";
 		}
 		if (daysremaining < 0)
 		{
@@ -658,7 +658,7 @@ void TextRoom::getFileStatus()
 			
 			QString daystoplusthirtyone;
 			daystoplusthirtyone.setNum(daysremaining+31);
-			showdeadline = isyears + ismonths + daystoplusthirtyone + " Day(s) remaining to deadline.";
+			showdeadline = isyears + ismonths + daystoplusthirtyone + " Day(s) ";
 		}
 		if (thismonthint == 2)
 		{
@@ -670,7 +670,7 @@ void TextRoom::getFileStatus()
 			}
 			QString daysforfebruary;
 			daysforfebruary.setNum(daystoplusonefebruary);
-			showdeadline = isyears + ismonths + daysforfebruary + " Day(s) remaining for deadline.";
+			showdeadline = isyears + ismonths + daysforfebruary + " Day(s) ";
 		}
 		if (thismonthint == 4 || thismonthint == 6 || thismonthint == 9 || thismonthint == 11)
 		{
@@ -678,7 +678,7 @@ void TextRoom::getFileStatus()
 			daystoplusthirty = daysremaining + 30;
 			QString daysforothers;
 			daysforothers.setNum(daystoplusthirty);
-			showdeadline = isyears  + ismonths + daysforothers + " Day(s) remaining to deadline.";
+			showdeadline = isyears  + ismonths + daysforothers + " Day(s) ";
 		}
 		}
 		if (daysremaining > 0)
@@ -688,14 +688,19 @@ void TextRoom::getFileStatus()
 		monthstoplustwelve.setNum(monthsremaining+12);
 		if (yearstominusone == 0)
 		{
-			showdeadline = monthstoplustwelve + " Month(s), " + daysto + " Day(s) remaining to deadline.";
+			showdeadline = monthstoplustwelve + " Month(s), " + daysto + " Day(s) ";
 		}
 		if (yearstominusone > 0)
 		{
-			showdeadline = yearstominusone + " Year(s), " + monthstoplustwelve + " Month(s), " + daysto +" Day(s) remaining to deadline.";
+			showdeadline = yearstominusone + " Year(s), " + monthstoplustwelve + " Month(s), " + daysto +" Day(s) ";
 		}
 		}
 	}
+	QString remain;
+	if (showdeadline == "")
+		remain = "";
+		else
+			remain = "remaining to deadline.    ";
 	int percent;
 	QString percenttext;
 	QString statsLabelStr;
@@ -718,9 +723,9 @@ void TextRoom::getFileStatus()
 		float f = words*100/wordcount;
 		percent = (int)f;
 		percenttext = percenttext.setNum(percent);
-		target = " of " + wordcounttext + " words (%" + percenttext + ")   ";
+		target = " of " + wordcounttext + " words  (%" + percenttext + ")   ";
 	}
-	statsLabel->setText(showdeadline + tr("%1").arg(words) + target + clock);
+	statsLabel->setText(showdeadline + remain + tr("%1").arg(words) + target + clock);
 }
 
 void TextRoom::documentWasModified()
