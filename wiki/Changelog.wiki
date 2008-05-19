@@ -2,6 +2,10 @@
 
 *Changelog:*
 
+_ver.0.2.6 - realtime - 2008-05-19_
+
+  * Added Editor Width option.
+
 _ver.0.2.5beta4 - realtime - 2008-05-19_
 
   * Added Deadline feature.
