@@ -49,13 +49,13 @@ private slots:
 	void on_pbEditorBackColor_clicked();
 	void on_pbStatusBarColor_clicked();
 	void on_pbStatusBarBgColor_clicked();
-	void on_pbScrollBarColor_clicked();
+	//void on_pbScrollBarColor_clicked();
 	void showForegroundDialog();
 	void showBackgroundDialog();
 	void showStatusColorDialog();
 	void showStatusBarBgColorDialog();
-	void showScrollBarColorDialog();
-	void changeScrollBarColorControlsState();
+	//void showScrollBarColorDialog();
+	//void changeScrollBarColorControlsState();
 
 private:
 	QColor fgcolor;

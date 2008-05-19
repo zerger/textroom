@@ -39,6 +39,7 @@ OptionsDialog::OptionsDialog(QWidget *parent)
 	connect(ui.statusbarSpinBox, SIGNAL( valueChanged(int) ), this, SLOT( activateApply() ) );
 	connect(ui.wordCountSpinBox, SIGNAL( valueChanged(int) ), this, SLOT( activateApply() ) );
 	connect(ui.editorSpinBox, SIGNAL( valueChanged(int) ), this, SLOT( activateApply() ) );
+	connect(ui.editorWidthSpinBox, SIGNAL( valueChanged(int) ), this, SLOT(activateApply()) );
 	connect(ui.soundCheckBox, SIGNAL( clicked() ), this, SLOT( activateApply() ) );
 	connect(ui.editorBoldCheckBox, SIGNAL( clicked() ), this, SLOT( activateApply() ) );
 	connect(ui.editorItalicCheckBox, SIGNAL( clicked() ), this, SLOT( activateApply() ) );
@@ -124,6 +125,7 @@ void OptionsDialog::reaSettings()
 	QDate date;
 	QDate dateselected = date.fromString(datetext, "yyyyMMdd");
 	ui.calendarWidget->setSelectedDate(dateselected);
+	ui.editorWidthSpinBox->setValue( settings.value	("EditorWidth", 800).toInt());
 	
 	/*	
 	if ( !ui.scrollBarCheckBox->isChecked() )
@@ -185,6 +187,7 @@ void OptionsDialog::writSettings()
 	settings.setValue("WordCount", ui.wordCountSpinBox->value() );
 	//settings.setValue("EnableScrollBar", ui.scrollBarCheckBox->isChecked() );
 	settings.setValue("Deadline", ui.calendarWidget->selectedDate().toString("yyyyMMdd"));
+	settings.setValue("EditorWidth", ui.editorWidthSpinBox->value() );
 
 	
 	QFont font;

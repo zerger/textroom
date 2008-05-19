@@ -94,6 +94,7 @@ private:
 	QFileSystemWatcher* fw;
 	bool optOpenLastFile;
 	bool isSaveCursor;
+	int editorWidth;
 	int numChanges;
 	int prevLength;
 	int parasold;

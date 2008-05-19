@@ -847,6 +847,9 @@ void TextRoom::readSettings()
 	deadline = QDate::fromString(deadlinetext, "yyyyMMdd");
 	wordcount = settings.value("WordCount", 0).toInt();
 	wordcounttext = settings.value("WordCount", 0).toString();
+	editorWidth = settings.value("EditorWidth", 800).toInt();
+	
+	textEdit->setMaximumWidth(editorWidth);
 
 	indentFirstLines();	
 
