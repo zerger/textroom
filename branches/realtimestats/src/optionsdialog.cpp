@@ -44,7 +44,7 @@ OptionsDialog::OptionsDialog(QWidget *parent)
 	connect(ui.editorItalicCheckBox, SIGNAL( clicked() ), this, SLOT( activateApply() ) );
 	connect(ui.statusbarBoldCheckBox, SIGNAL( clicked() ), this, SLOT( activateApply() ) );
 	connect(ui.statusbarItalicCheckBox, SIGNAL( clicked() ), this, SLOT( activateApply() ) );
-	connect(ui.scrollBarCheckBox, SIGNAL( clicked() ), this, SLOT( changeScrollBarColorControlsState() ) );
+	//connect(ui.scrollBarCheckBox, SIGNAL( clicked() ), this, SLOT( changeScrollBarColorControlsState() ) );
 	connect(ui.loadOnStartCheckBox, SIGNAL( clicked() ), this, SLOT( activateApply() ) );
 	connect(ui.saveCursorCheckBox, SIGNAL( clicked() ), this, SLOT( activateApply() ) );
 	connect(ui.fullScreenCheckBox, SIGNAL( clicked() ), this, SLOT( activateApply() ) );
@@ -58,7 +58,7 @@ OptionsDialog::OptionsDialog(QWidget *parent)
 
 }
 
-void OptionsDialog::changeScrollBarColorControlsState()
+/*void OptionsDialog::changeScrollBarColorControlsState()
 {
 	if ( ui.scrollBarCheckBox->isChecked() )
 	{
@@ -71,7 +71,7 @@ void OptionsDialog::changeScrollBarColorControlsState()
 		ui.pbScrollBarColor->setEnabled(false);
 	}
 	activateApply();
-}
+}*/
 
 void OptionsDialog::activateApply()
 {
@@ -119,17 +119,18 @@ void OptionsDialog::reaSettings()
 	ui.soundCheckBox->setChecked( settings.value("Sound", true).toBool() );
 	ui.autoSaveCheckBox->setChecked( settings.value("AutoSave", false).toBool() );
 	ui.flowModeCheckBox->setChecked( settings.value("FlowMode", false).toBool() );
-	ui.scrollBarCheckBox->setChecked( settings.value("EnableScrollBar", true).toBool() );
+	//ui.scrollBarCheckBox->setChecked( settings.value("EnableScrollBar", true).toBool() );
 	QString datetext = settings.value("Deadline", todaytext).toString();
 	QDate date;
 	QDate dateselected = date.fromString(datetext, "yyyyMMdd");
 	ui.calendarWidget->setSelectedDate(dateselected);
-		
+	
+	/*	
 	if ( !ui.scrollBarCheckBox->isChecked() )
 	{
 		ui.scrollBarColorLabel->setEnabled(false);
 		ui.pbScrollBarColor->setEnabled(false);
-	}
+	}*/
 
 	QPalette palette;
 
@@ -149,9 +150,9 @@ void OptionsDialog::reaSettings()
 		bgcolor = settings.value("Colors/Background", "black" ).toString());
 	ui.pbEditorBackColor->setPalette(palette);
 
-	palette.setColor(ui.pbScrollBarColor->backgroundRole(),
+	/*palette.setColor(ui.pbScrollBarColor->backgroundRole(),
 		sbcolor = settings.value("Colors/ScrollBarColor", "#1E1E1E" ).toString());
-	ui.pbScrollBarColor->setPalette(palette);
+	ui.pbScrollBarColor->setPalette(palette);*/
 
 }
 
@@ -172,7 +173,7 @@ void OptionsDialog::writSettings()
 	settings.setValue("Colors/StatusColor", scolor.name() );
 	settings.setValue("Colors/ScrollBarColor", sbcolor.name() );
 
-	settings.setValue("EnableScrollbar", ui.scrollBarCheckBox->isChecked() );
+	//settings.setValue("EnableScrollbar", ui.scrollBarCheckBox->isChecked() );
 	settings.setValue("RecentFiles/OpenLastFile", ui.loadOnStartCheckBox->isChecked() );
 	settings.setValue("RecentFiles/SavePosition", ui.saveCursorCheckBox->isChecked() );
 
@@ -182,7 +183,7 @@ void OptionsDialog::writSettings()
 	settings.setValue("AutoSave", ui.autoSaveCheckBox->isChecked() );
 	settings.setValue("FlowMode", ui.flowModeCheckBox->isChecked() );
 	settings.setValue("WordCount", ui.wordCountSpinBox->value() );
-	settings.setValue("EnableScrollBar", ui.scrollBarCheckBox->isChecked() );
+	//settings.setValue("EnableScrollBar", ui.scrollBarCheckBox->isChecked() );
 	settings.setValue("Deadline", ui.calendarWidget->selectedDate().toString("yyyyMMdd"));
 
 	
@@ -227,7 +228,7 @@ void OptionsDialog::showEvent( QShowEvent * )
 
 
 // SCROLLBAR
-
+/*
 void OptionsDialog::on_pbScrollBarColor_clicked()
 {
 	showScrollBarColorDialog();
@@ -245,7 +246,7 @@ void OptionsDialog::showScrollBarColorDialog()
 		ui.pbScrollBarColor->setAutoFillBackground(false);
 	}
 }
-
+*/
 // STATUSBAR BACKGROUND
 
 void OptionsDialog::on_pbStatusBarBgColor_clicked()
