@@ -2,6 +2,12 @@
 
 *Changelog:*
 
+_ver.0.2.5beta4 - realtime - 2008-05-19_
+
+  * Added Deadline feature.
+  * Fixed some bugs.
+  * Removed scrollbar.
+
 _ver.0.2.5beta1 - realtime - 2008-05-18_
 
   * Added Target Word Count feature.
