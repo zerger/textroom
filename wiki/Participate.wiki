@@ -6,4 +6,5 @@ You are more than welcome to participate in any way you can, your help is invalu
   * report bugs
   * offer advise based on your knowledge on C++, Qt, usability
   * post patches
-  * report bugs and wishes, share the way you use TextRoom
+  * request features
+  * share the way you use TextRoom
