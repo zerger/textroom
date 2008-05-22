@@ -14,7 +14,7 @@ Windows port includes the necessary libraries.
 [http://code.google.com/p/textroom/downloads/list Download] the latest version of TextRoom. Drop to command line and type:
 
 {{{
-tar xjvf ./textroom-xxx.tar.bz2
+tar xjvf ./textroom-xxx.tar.gz
 }}}
 
 to unarchive, followed by:
