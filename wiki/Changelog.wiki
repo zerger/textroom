@@ -2,6 +2,10 @@
 
 *Changelog:*
 
+_ver.0.2.8x - 2008-05-22_
+
+    * Artwork by Donny Lim
+
 _ver.0.2.6 - realtime - 2008-05-19_
 
   * Added Editor Width option.
