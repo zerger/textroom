@@ -7,6 +7,8 @@ These generic instructions are Linux specific. The editor may or may not work un
 
 To compile TextRoom, you will need the Qt4 development libraries (ver. 4.3.2 or later). 
 
+To hear the sounds you will need *nas*.
+
 = Details =
 
 [http://code.google.com/p/textroom/downloads/list Download] the latest version of TextRoom. Drop to command line and type:
