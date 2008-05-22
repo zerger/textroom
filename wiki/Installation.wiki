@@ -47,6 +47,6 @@ which will place a copy of the executable file in _/usr/local/bin_. Start the ed
 textroom
 }}}
 
-or clicking the menu icon.
+or clicking the menu icon under Office.
 
 and press F1 for help.
