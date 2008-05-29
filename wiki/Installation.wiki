@@ -5,7 +5,7 @@
 
 These generic instructions are Linux specific. The editor may or may not work under other operating systems (this is yet to be tested).
 
-To compile TextRoom on Linux, you will need the *Qt4 development libraries (ver. 4.3.2 or later)*. To hear the sounds you will need *nas (ver. 1.9.1 or later)*. 
+To compile TextRoom on Linux, you will need the *Qt4 development libraries (ver. 4.3.2 or later)*. To hear the sounds you will need *libsdl 1.2.13 and libsdl-mixer 1.2.8*. 
 
 Windows port includes the necessary libraries.
 
