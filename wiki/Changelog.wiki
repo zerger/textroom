@@ -2,6 +2,13 @@
 
 *Changelog:*
 
+_ver.0.4.4 - 2008-08-01
+
+    * New Artwork by Edward S.
+    * New sounds.
+    * Several Bugfixes.
+    * Tried and works on Vista.
+
 _ver.0.2.8x - 2008-05-22_
 
     * Artwork by Donny Lim
