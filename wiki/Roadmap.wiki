@@ -3,6 +3,7 @@
 = v0.6 =
 
   * Change txr format, as a preparation to future features. (xml)
+  * Add Bookmarking Feature.
   * Add a system tray icon.
   * Make Date and Time format feature more user-friendly.
   * Put a sound alarm for Timed Writing feature? (Instead of buggy Warning Dialog? When sound is disabled, should the dialog appear?)
