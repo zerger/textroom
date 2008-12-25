@@ -1,0 +1,43 @@
+#summary Roadmap for TextRoom.
+
+= v0.6 =
+
+  * Change txr format, as a preparation to future features. (xml)
+  * Add a system tray icon.
+  * Make Date and Time format feature more user-friendly.
+  * Put a sound alarm for Timed Writing feature? (Instead of buggy Warning Dialog? When sound is disabled, should the dialog appear?)
+  * Listen to wishes from users.
+
+= v0.7 =
+
+  * Develop Multi-Document feature. 
+  * Make txp file format for multi-document projects? (or make txr a project file format.)
+  * Improve rich text editing features. (Are there solutions to paragraph and line spacing in Qt? Use frames?)
+  * Improve Font Selection Dialog. (Put it in Options Dialog?)
+  * Improve Font Size Feature. (Put it in Options Dialog? Or another dialog for this and the one above?)
+  * Fix bugs.
+  * Listen to wishes from users.
+
+= v0.8 =
+
+  * Develop an Outline feature. 
+  * rtf export? (Are there simple cross-platform solutions?)
+  * odt export? (Solutions simple and light?)
+  * Spell checking? (Are there simple cross-platform solutions?)
+  * Fix bugs.
+  * Listen to wishes from users.
+
+= v0.9 =
+
+  * Develop an Index Card Feature? (For every document or for documents user chooses?)
+  * Try to make it simple and lightweight.
+  * Fix bugs.
+  * Listen to wishes from users.
+
+= v1.0 =
+
+  * Develop a Scrapbook feature? (In which user can put many things in various formats? Should this be a directory or a full screen interface to files?)
+  * Try to make it simple and lightweight.
+  * Fix bugs as always.
+  * Listen to wishes from users.
+  * Prepare another roadmap.
