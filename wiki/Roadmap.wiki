@@ -6,6 +6,7 @@
   * Add a system tray icon.
   * Make Date and Time format feature more user-friendly.
   * Put a sound alarm for Timed Writing feature? (Instead of buggy Warning Dialog? When sound is disabled, should the dialog appear?)
+  * Fix bugs.
   * Listen to wishes from users.
 
 = v0.7 =
