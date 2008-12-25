@@ -16,12 +16,13 @@
   * Improve rich text editing features. (Are there solutions to paragraph and line spacing in Qt? Use frames?)
   * Improve Font Selection Dialog. (Put it in Options Dialog?)
   * Improve Font Size Feature. (Put it in Options Dialog? Or another dialog for this and the one above?)
+  * Fork a simple version of TextRoom before it gets bloated, for users who likes it simple.
   * Fix bugs.
   * Listen to wishes from users.
 
 = v0.8 =
 
-  * Develop an Outline feature. 
+  * Develop an Outline feature. (Not in simple version.)
   * rtf export? (Are there simple cross-platform solutions?)
   * odt export? (Solutions simple and light?)
   * Spell checking? (Are there simple cross-platform solutions?)
@@ -30,15 +31,14 @@
 
 = v0.9 =
 
-  * Develop an Index Card Feature? (For every document or for documents user chooses?)
-  * Try to make it simple and lightweight.
+  * Develop an Index Card Feature? (For every document or for documents user chooses?) (Not in simple version)
   * Fix bugs.
   * Listen to wishes from users.
 
 = v1.0 =
 
-  * Develop a Scrapbook feature? (In which user can put many things in various formats? Should this be a directory or a full screen interface to files?)
-  * Try to make it simple and lightweight.
+  * Develop a Scrapbook feature? (In which user can put many things in various formats? Should this be a directory or a full screen interface to files?) (Not in simple version)
+  * Make txr format a zipped xml for handling large files? (Simple and cross-platform library for this?) (Not in simple version)
   * Fix bugs as always.
   * Listen to wishes from users.
   * Prepare another roadmap.
