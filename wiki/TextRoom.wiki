@@ -1,4 +1,5 @@
 #summary What is TextRoom?
+#labels Featured
 
 TextRoom is a simple full-screen text editor heavily inspired by similar text editors such as [http://www.baara.com/q10/ Q10] and [http://www.codealchemists.com/jdarkroom JDarkRoom]. Initially it was a personal offshoot of the [http://code.google.com/p/phrasis/ Phrasis] project. It's based on Qt 4.3.2
 
