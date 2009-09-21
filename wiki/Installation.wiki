@@ -50,3 +50,24 @@ textroom
 or clicking the menu icon under Office.
 
 and press F1 for help.
+
+= Uninstallation =
+
+If you've installed TextRoom from the deb package, there should be an entry in synaptic. But if there isn't you can remove the package by typing 
+{{{sudo apt-get remove textroom}}}
+in a terminal.
+
+If you've installed from the Linux Installer, there isn't an uninstaller. But you can remove the files by rm commands in a terminal, which are:
+{{{
+sudo rm /usr/bin/textroom
+sudo rm /usr/share/applications/TextRoom.desktop
+sudo rm -r /usr/local/share/textroom
+sudo rm /usr/share/pixmaps/textroom.png
+}}}
+
+Those are all the files of textroom.
+
+If you've installed from source code, you can do 
+{{{sudo make uninstall}}}
+in the source code directory. If you've removed the source code, you can download and untar the source from the TextRoom site, and in the source directory again 
+{{{qmake-qt4 && make && sudo make uninstall}}}
