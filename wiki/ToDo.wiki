@@ -7,11 +7,11 @@ This isn't a roadmap, because I suck at following roadmaps. Just my notes and wi
 
 This page was created on *4.16.2010*.
 
- <u><b>Underlined Bold</b></u> indicates the entries I'm currently *working on*.
+ <u><b>Underlined Bold</b></u> indicates that I'm *working on* the entry.
 
- <b>Bold</b> indicates the entries I'm currently *exploring*.
+ <b>Bold</b> indicates that I'm *exploring the feasibility* of the entry.
 
- ~~Strikeout~~ indicates the entries *completed*. 
+ ~~Strikeout~~ indicates that the entries are *completed*. 
 
 ----
 
