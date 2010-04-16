@@ -56,7 +56,7 @@ If you've installed from source code, you can do
 {{{
 sudo make uninstall
 }}}
-in the source code directory. If you've removed the source code, you can download and untar the source from the TextRoom site, and in the source directory again 
+in the source code directory. If you've removed the source code, you can download and untar the source from the !TextRoom site, and in the source directory again 
 {{{
 qmake-qt4 && make && sudo make uninstall
 }}}
