@@ -34,6 +34,8 @@ This page was created on *4.16.2010*.
  * Add RTF support? (An html2rtf script? C++ code? Get from word processors? More dependencies?)
  * Add line and paragraph spacing? (Outside Qt? More dependencies?)
  * Add printing support with formatting options. (PDF export? More dependencies?)
+ * Add link support.
+ * Add image support? (Put the images in compressed .txr?)
 
 ----
 
