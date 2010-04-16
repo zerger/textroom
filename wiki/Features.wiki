@@ -1,4 +1,4 @@
-#summary TextRoom pros and cons
+#summary TextRoom features
 #labels Featured
 
 =Features=
