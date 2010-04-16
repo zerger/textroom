@@ -16,16 +16,16 @@ Just double click the .deb file or open with GDebi Package Installer.
 After download the source code, open up a terminal, cd to the directory which contains the downloaded file and to uncompress, type:
 
 {{{
-tar -xzvf ./textroom-xxx.tar.gz (xxx is the version number)
+tar -xzvf ./textroom-xxx.tar.gz 
 }}}
 
-Then cd to the directory created
+xxx is the version number *(e.g. textroom-0.6.1.tar.gz)*. Then cd to the created directory:
 
 {{{
-cd ./textroom-xxx
+cd ./textroom-xxx 
 }}}
 
-And execute
+It may be only `./textroom` in some versions. And execute the following in order:
 
 {{{
 qmake-qt4 (some distros use only qmake)
