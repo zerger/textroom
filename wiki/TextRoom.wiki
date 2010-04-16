@@ -1,6 +1,5 @@
-#summary What is TextRoom?
 #labels Featured
+=What is TextRoom?=
+*TextRoom* is a free (as in freedom and free beer) full screen text editor developed especially writers in mind.
 
-TextRoom is a simple full-screen text editor heavily inspired by similar text editors such as [http://www.baara.com/q10/ Q10] and [http://www.codealchemists.com/jdarkroom JDarkRoom]. Initially it was a personal offshoot of the [http://code.google.com/p/phrasis/ Phrasis] project. It's based on Qt 4.3.2
-
-TextRoom is also on [http://textroom.sourceforge.net/ Sourceforge].
+TextRoom and all other similar editors share one goal: to get you writing right away by providing distraction free environment to your liking, as well as familiar set of keyboard shortcuts to control its behavior. If you don't feel comfortable already with your editor of choice, you may find it useful.
