@@ -1,4 +1,3 @@
-#labels Featured
 ====v. 0.6.1 on Ubuntu====
 
 <img src="http://textroom.sourceforge.net/images/screen.1.png" width="512" height="300" border="0" />   
