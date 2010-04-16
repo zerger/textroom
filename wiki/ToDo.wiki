@@ -58,5 +58,3 @@ This page was created on *4.16.2010*.
  * Make a proprietary version? (Nah, I don't think so, but I wish. It's possible by the way, Qt and SDL are LGPL.)
  * Add installing and using different sound files feature. (Sound file packages could be separately downloaded.)
  * Add a background picture feature. (Possible in Qt? I guess.)
-
-----
