@@ -1,3 +1,1 @@
-#summary One-sentence summary of this page.
-
-<wiki:gadget url="http://www.rememberthemilk.com/services/modules/gmail/rtm.xml" border="0">
+#summary To-Do List for TextRoom.
