@@ -7,13 +7,19 @@ This isn't a roadmap, because I suck at following roadmaps. Just my notes and wi
 
 This page was created on *4.16.2010*.
 
+ ✓ : *Check mark* indicates the entries I'm currently *working on*.
+
+ ? : *Question mark* indicates the entries I'm currently *exploring*.
+
+ ~~*Strike*~~ indicates the entries *completed*. 
+
 ----
 
 ==By Priority==
 
 ===High===
 
- * Add spellcheck. (Since we are no more developing for Windows, for now at least.)
+ * ? Add spellcheck. (Since we are no more developing for Windows, for now at least.)
  * Add file associations for Gnome, KDE and XFCE at least. (A universal solution would be great.)
  * Make a universal Linux installer with dependency check and uninstaller. (A Bash script of course. More bugs.)
 
@@ -30,8 +36,8 @@ This page was created on *4.16.2010*.
 
 ===Low===
 
- * Add restoring to defaults feature. (Working on this one right now. QSettings just behave oddly.)
- * Add RTF support? (An html2rtf script? C++ code? Get from word processors? More dependencies?)
+ * ✓ Add restoring to defaults feature. (QSettings just behave oddly.) 
+ * ? Add RTF support? (An html2rtf script? C++ code? Get from word processors? More dependencies?)
  * Add line and paragraph spacing? (Outside Qt? More dependencies?)
  * Add printing support with formatting options. (PDF export? More dependencies?)
  * Add link support.
