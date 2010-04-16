@@ -1,73 +1,62 @@
 #summary Requirements and installation.
 #labels Phase-Deploy,Featured
 
-= Introduction =
+=Requirements=
 
-These generic instructions are Linux specific. The editor may or may not work under other operating systems (this is yet to be tested).
+When compiling from source *Qt4.4 (or later) development libraries* for everything, *SDL 1.2.13 (or later) and SDL-mixer 1.2.8 (or later) development libraries* for typing sounds. 
 
-To compile TextRoom on Linux, you will need the *Qt4 development libraries (ver. 4.3.2 or later)*. To hear the sounds you will need *libsdl 1.2.13 and libsdl-mixer 1.2.8*. 
+----
 
-Windows port includes the necessary libraries.
+=Installation=
 
-= Details =
+==On Ubuntu:==
+Just double click the .deb file or open with GDebi Package Installer.
 
-[http://code.google.com/p/textroom/downloads/list Download] the latest version of TextRoom. Drop to command line and type:
+==On Any Distro:==
+After download the source code, open up a terminal, cd to the directory which contains the downloaded file and to uncompress, type:
 
 {{{
-tar xzvf ./textroom-xxx.tar.gz
+tar -xzvf ./textroom-xxx.tar.gz (xxx is the version number)
 }}}
 
-to unarchive, followed by:
+Then cd to the directory created
 
 {{{
 cd ./textroom-xxx
 }}}
 
-Then execute:
+And execute
 
 {{{
-qmake-qt4
-}}}
-
-and
-
-{{{
+qmake-qt4 (some distros use only qmake)
 make
-}}}
-
-to compile the editor. After successful compilation, you may start TextRoom simply by typing _bin/textroom_ (not recommended). Or, to install it system wide, type as root:
-
-{{{
+su (enter root password)
 make install
 }}}
 
-which will place a copy of the executable file in _/usr/local/bin_. Start the editor by typing:
+You can start TextRoom by clicking on the menu entry or typing
 
 {{{
 textroom
 }}}
 
-or clicking the menu icon under Office.
+----
 
-and press F1 for help.
+=Uninstallation=
 
-= Uninstallation =
-
+==On Ubuntu:==
 If you've installed TextRoom from the deb package, there should be an entry in synaptic. But if there isn't you can remove the package by typing 
-{{{sudo apt-get remove textroom}}}
+{{{
+sudo apt-get remove textroom
+}}}
 in a terminal.
 
-If you've installed from the Linux Installer, there isn't an uninstaller. But you can remove the files by rm commands in a terminal, which are:
-{{{
-sudo rm /usr/bin/textroom
-sudo rm /usr/share/applications/TextRoom.desktop
-sudo rm -r /usr/local/share/textroom
-sudo rm /usr/share/pixmaps/textroom.png
-}}}
-
-Those are all the files of textroom.
-
+==On Any Distro:==
 If you've installed from source code, you can do 
-{{{sudo make uninstall}}}
+{{{
+sudo make uninstall
+}}}
 in the source code directory. If you've removed the source code, you can download and untar the source from the TextRoom site, and in the source directory again 
-{{{qmake-qt4 && make && sudo make uninstall}}}
+{{{
+qmake-qt4 && make && sudo make uninstall
+}}}
