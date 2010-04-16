@@ -7,31 +7,43 @@ This isn't a roadmap, because I suck at following roadmaps. Just my notes and wi
 
 This page was created on *4.16.2010*.
 
-=By Priority=
+----
 
-==High==
+==By Priority==
+
+===High===
 
  * Add spellcheck. (Since we are no more developing for Windows, for now at least.)
  * Add file associations for Gnome, KDE and XFCE at least. (A universal solution would be great.)
  * Make a universal Linux installer with dependency check and uninstaller. (A Bash script of course. More bugs.)
 
-==Medium==
+----
+
+===Medium===
 
  * Add cursor settings.
  * Add line indent feature back. (Find a less resource hungry method.)
  * Make a .txr format with information about files. (Compressed with a properties.xml file? Similar to .odt? CSS? More dependencies?)
  * The above means, add file-specific settings.
 
-==Low==
+----
+
+===Low===
 
  * Add restoring to defaults feature.
  * Add RTF support? (An html2rtf script? C++ code? Get from word processors? More dependencies?)
  * Add line and paragraph spacing? (Outside Qt? More dependencies?)
  * Add printing support with formatting options. (PDF export? More dependencies?)
 
-==Optional==
+----
+
+===Optional===
 
  * Add a project manager.
  * Add editing multiple documents ability. (Buffers? Tabbed interface?) 
  * Add a background picture feature. (Possible in Qt? I guess.)
  * Add encryption support. (More dependencies for sure.)
+ * Add installing and using different sound files feature. (Sound file packages could be separately downloaded.)
+ * Make a proprietary version? (Nah, I don't think so, but I wish. It's possible by the way, Qt and SDL are LGPL.)
+
+----
