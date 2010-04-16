@@ -21,4 +21,4 @@
  * typing sounds similar to a typewriter which can be disabled.
  * may be cross-platform: We are only supporting *Linux* right now. Because we don't have Windows or MacOSX. 
 
- *If you are interested in or has done compiling !TextRoom on a Windows or Mac, please contact us.*
+ If you are interested in or has done compiling !TextRoom on a Windows or Mac, please contact us.
