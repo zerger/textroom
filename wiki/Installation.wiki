@@ -1,18 +1,16 @@
-#summary Requirements and installation.
-#labels Phase-Deploy,Featured
-
-=Requirements=
+#labels Featured
+===Requirements===
 
 When compiling from source you will need *Qt4.4 (or later), SDL 1.2.13 (or later) and SDL-mixer 1.2.8 (or later) development libraries* installed. 
 
 ----
 
-=Installation=
+===Installation===
 
-==On Ubuntu:==
+====On Ubuntu:====
 Just double click the .deb file or open with GDebi Package Installer.
 
-==On Any Distro:==
+====On Any Distro:====
 After downloading the source code, open up a terminal, cd to the directory which contains the downloaded file and to uncompress, type:
 
 {{{
@@ -42,7 +40,7 @@ textroom
 
 ----
 
-=Uninstallation=
+===Uninstallation===
 
 ==On Ubuntu:==
 If you've installed !TextRoom from the deb package, there should be an entry in synaptic. But if there isn't you can remove the package by typing 
