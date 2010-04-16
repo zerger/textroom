@@ -1,18 +1,14 @@
 #summary Screenshots of TextRoom.
 #labels Featured
 
-[http://picasaweb.google.com/peter.toushkov/UntitledAlbum/photo#5170369335251092146 http://lh3.google.com/peter.toushkov/R8DXhEE2wrI/AAAAAAAAADI/pGsv1rJUYC8/s288/textroom04.jpg]   
+===v. 0.6.1 on Ubuntu===
 
-[http://picasaweb.google.com/peter.toushkov/UntitledAlbum/photo#5170369335251092162 http://lh3.google.com/peter.toushkov/R8DXhEE2wsI/AAAAAAAAADQ/BdaBkJo5ufo/s288/textroom05.jpg]
+<img src="http://textroom.sourceforge.net/images/screen.1.png" width="512" height="300" border="0" />   
 
-[http://picasaweb.google.com/peter.toushkov/UntitledAlbum/photo#5170369339546059474 http://lh4.google.com/peter.toushkov/R8DXhUE2wtI/AAAAAAAAADY/Pm_6RiT7_UM/s288/textroom06.jpg]
+<img src="http://textroom.sourceforge.net/images/screen.2.png" width="512" height="300" border="0" />   
 
-[http://picasaweb.google.com/peter.toushkov/UntitledAlbum/photo#5170369343841026786 http://lh5.google.com/peter.toushkov/R8DXhkE2wuI/AAAAAAAAADg/7PEB5j8SDT0/s288/textroom07.jpg]
+<img src="http://textroom.sourceforge.net/images/screen.3.png" width="512" height="300" border="0" />   
 
-[http://picasaweb.google.com/peter.toushkov/UntitledAlbum/photo#5170369343841026802 http://lh5.google.com/peter.toushkov/R8DXhkE2wvI/AAAAAAAAADo/In-xYw7KY08/s288/textroom08.jpg]
+<img src="http://textroom.sourceforge.net/images/screen.4.png" width="512" height="300" border="0" />   
 
-_Screenshots of TextRoom - Realtime_
-
-[http://boxstr.com/files/2080098_bs69i/Screenshot-realtime1.png http://boxstr.com/files/2080107_y2ej6/Screenshot-realtime1-small.png]
-[http://boxstr.com/files/2080099_qwocs/Screenshot-realtime02.png http://boxstr.com/files/2080108_2giq5/Screenshot-realtime02-small.png]
-[http://boxstr.com/files/2080100_tz5j6/Screenshot-realtime03.png http://boxstr.com/files/2080109_slvwz/Screenshot-realtime03-small.png]
+<img src="http://textroom.sourceforge.net/images/screen.5.png" width="512" height="300" border="0" />   
