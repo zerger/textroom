@@ -45,7 +45,7 @@ textroom
 =Uninstallation=
 
 ==On Ubuntu:==
-If you've installed TextRoom from the deb package, there should be an entry in synaptic. But if there isn't you can remove the package by typing 
+If you've installed !TextRoom from the deb package, there should be an entry in synaptic. But if there isn't you can remove the package by typing 
 {{{
 sudo apt-get remove textroom
 }}}
