@@ -1,7 +1,11 @@
 #labels Featured
 ===Requirements===
 
-When compiling from source you will need *Qt4.4 (or later), SDL 1.2.13 (or later) and SDL-mixer 1.2.8 (or later) development libraries* installed. 
+To compile from source you will need the development libraries to: 
+
+ * Qt4.4 (or later)
+ * SDL 1.2.13 (or later)
+ * SDL-mixer 1.2.8 (or later) 
 
 ----
 
