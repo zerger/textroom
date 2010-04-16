@@ -1,4 +1,3 @@
-#labels Featured
 ===Requirements===
 
 To compile from source you will need the development libraries to: 
