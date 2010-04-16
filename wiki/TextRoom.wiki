@@ -1,4 +1,6 @@
+#summary What is TextRoom?
 #labels Featured
+
 =What is TextRoom?=
 *TextRoom* is a free (as in freedom and free beer) full screen text editor developed especially writers in mind.
 
