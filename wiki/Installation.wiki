@@ -13,7 +13,7 @@ When compiling from source *Qt4.4 (or later) development libraries* for everythi
 Just double click the .deb file or open with GDebi Package Installer.
 
 ==On Any Distro:==
-After download the source code, open up a terminal, cd to the directory which contains the downloaded file and to uncompress, type:
+After downloading the source code, open up a terminal, cd to the directory which contains the downloaded file and to uncompress, type:
 
 {{{
 tar -xzvf ./textroom-xxx.tar.gz 
