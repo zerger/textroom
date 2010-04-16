@@ -2,6 +2,17 @@
 
 *Changelog:*
 
+_ver.0.6.1 - 2010-04-16
+
+    * New font selection dialog, you can adjust size, font family, style and color of the selected font now.
+    * CPU usage issue should have been fixed.
+    * Ubuntu package updated, so sounds should work now.
+    * Adjusting date nad time in another format.
+    * Removed filename from the statusbar for the sake of simplicity. 
+    * Added character count feature.
+    * Deadline now shows only days for the sake of code simplicity.
+    * Added Default Save Location option.
+
 _ver.0.4.4 - 2008-08-01
 
     * New Artwork by Edward S.
