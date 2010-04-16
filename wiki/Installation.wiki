@@ -34,7 +34,7 @@ su (enter root password)
 make install
 }}}
 
-You can start TextRoom by clicking on the menu entry or typing
+You can start !TextRoom by clicking on the menu entry or typing
 
 {{{
 textroom
