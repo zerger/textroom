@@ -1,5 +1,3 @@
-#summary Wishlist
-
 =What Is This?=
 
 This isn't a roadmap, because I suck at following roadmaps. Just my notes and wishes about !TextRoom. I will try to update this page frequently, if I can. If you have any wishes or feature requests for !TextRoom, just leave a comment. 
