@@ -19,4 +19,6 @@
  * targets: setting short deadlines to write in minutes
  * keyboard shortcuts for the most common tasks (if you start the program for the first time, just press F1 for help)
  * typing sounds similar to a typewriter which can be disabled.
- * may be cross-platform: We are only supporting *Linux* right now. Because we don't have Windows or MacOSX. If anyone is interested in or has done compiling !TextRoom on a Windows or Mac, please contact us.
+ * may be cross-platform: We are only supporting *Linux* right now. Because we don't have Windows or MacOSX. 
+
+ *If you are interested in or has done compiling !TextRoom on a Windows or Mac, please contact us.*
