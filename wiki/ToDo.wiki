@@ -30,7 +30,7 @@ This page was created on *4.16.2010*.
 
 ===Low===
 
- * Add restoring to defaults feature.
+ * Add restoring to defaults feature. (Working on this one right now. QSettings just behave oddly.)
  * Add RTF support? (An html2rtf script? C++ code? Get from word processors? More dependencies?)
  * Add line and paragraph spacing? (Outside Qt? More dependencies?)
  * Add printing support with formatting options. (PDF export? More dependencies?)
@@ -43,9 +43,14 @@ This page was created on *4.16.2010*.
 
  * Add a project manager.
  * Add editing multiple documents ability. (Buffers? Tabbed interface?) 
- * Add a background picture feature. (Possible in Qt? I guess.)
  * Add encryption support. (More dependencies for sure.)
- * Add installing and using different sound files feature. (Sound file packages could be separately downloaded.)
+
+----
+
+===More===
+
  * Make a proprietary version? (Nah, I don't think so, but I wish. It's possible by the way, Qt and SDL are LGPL.)
+ * Add installing and using different sound files feature. (Sound file packages could be separately downloaded.)
+ * Add a background picture feature. (Possible in Qt? I guess.)
 
 ----
