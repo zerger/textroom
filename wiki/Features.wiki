@@ -1,9 +1,5 @@
-#summary TextRoom features
 #labels Featured
-
-=Features=
-
-==Version 0.6.1==
+===Version 0.6.1===
 
  * basic rich text editing: bold, italic, underline, and changing font, font size and color
  * configurable statusbar colors and fonts
