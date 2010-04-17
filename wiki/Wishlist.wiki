@@ -8,7 +8,7 @@ This page was created on *4.16.2010*.
 
  <b>Bold</b> indicates that I'm *exploring the feasibility* of the entry.
 
- ~~Strikeout~~ indicates that the entries are *completed*. 
+ ~~Strikeout~~ indicates that the entries are *completed or given up*. 
 
 ----
 
@@ -34,9 +34,9 @@ This page was created on *4.16.2010*.
 ====Low====
 
  * <u><b> Add restoring to defaults feature. (QSettings just behave oddly.)</b></u> 
- * <b>Add RTF support? (An html2rtf script? C++ code? Get from word processors? More dependencies?)</b>
+ * ~~Add RTF support? (An html2rtf script? C++ code? Get from word processors? More dependencies?)~~ <b>Given up on 4.17.2010</b> Anyway, all word processors can deal with html. This brings giving up printing too.
  * Add line and paragraph spacing? (Outside Qt? More dependencies?)
- * Add printing support with formatting options. (PDF export? More dependencies?)
+ * ~~Add printing support with formatting options. (PDF export? More dependencies?)~~ <b>Given up on 4.17.2010</b> !TextRoom isn't a word processor.
  * Add link support.
  * Add image support? (Put the images in compressed .txr?)
 
