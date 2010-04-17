@@ -45,7 +45,7 @@ This page was created on 4.16.2010.
 ====Optional====
 
  * Add a project manager.
- * Add editing multiple documents ability. (Buffers? Tabbed interface?) 
+ * Add ability to edit multiple documents. (Buffers? Tabbed interface?) 
  * Add encryption support. (More dependencies for sure.)
 
 ----
