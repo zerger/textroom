@@ -2,7 +2,7 @@
 
 This isn't a roadmap, because I suck at following roadmaps. Just my notes and wishes about !TextRoom. I will try to update this page frequently, if I can. If you have any wishes or feature requests for !TextRoom, just leave a comment. 
 
-This page was created on *4.16.2010*.
+This page was created on 4.16.2010.
 
  <u><b>Underlined Bold</b></u> indicates that I'm *working on* the entry.
 
@@ -34,9 +34,9 @@ This page was created on *4.16.2010*.
 ====Low====
 
  * <u><b> Add restoring to defaults feature. (QSettings just behave oddly.)</b></u> 
- * ~~Add RTF support? (An html2rtf script? C++ code? Get from word processors? More dependencies?)~~ <b>Given up on 4.17.2010</b> Anyway, all word processors can deal with html. Why bother with file formats when we have a highly compatible format already? This brings giving up printing too.
+ * ~~Add RTF support? (An html2rtf script? C++ code? Get from word processors? More dependencies?)~~ Given up on 4.17.2010. Anyway, all word processors can deal with html. Why bother with file formats when we have a highly compatible format already? This brings giving up printing too.
  * Add line and paragraph spacing? (Outside Qt? More dependencies?)
- * ~~Add printing support with formatting options. (PDF export? More dependencies?)~~ <b>Given up on 4.17.2010</b> !TextRoom isn't a word processor.
+ * ~~Add printing support with formatting options. (PDF export? More dependencies?)~~ Given up on 4.17.2010. !TextRoom isn't a word processor.
  * Add link support.
  * Add image support? (Put the images in compressed .txr?)
 
