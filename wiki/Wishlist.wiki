@@ -16,7 +16,7 @@ This page was created on 4.16.2010.
 
 ====High====
 
- * <b>Add spellcheck. (Since we are no more developing for Windows, for now at least.) Aspell?</b>
+ * ~~Add spellcheck. (Since we are no more developing for Windows, for now at least.) Aspell?~~ Added aspell, but it marks many right words as misspelled. Why? I have to work on it more.
  * Add file associations for Gnome, KDE and XFCE at least. (A universal solution would be great.)
  * Make a universal Linux installer with dependency check and uninstaller. (A Bash script of course. More bugs.)
 
