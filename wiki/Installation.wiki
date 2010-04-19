@@ -27,10 +27,10 @@ cd ./textroom-xxx
 It may be only `./textroom` in some versions. And execute the following in order:
 
 {{{
-qmake-qt4 (some distros use only qmake)
+qmake
 make
-su (enter root password)
-make install
+sudo make install
+make clean
 }}}
 
 You can start !TextRoom by clicking on the menu entry or typing
