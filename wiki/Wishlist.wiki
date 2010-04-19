@@ -17,6 +17,8 @@ This page was created on 4.16.2010.
 ====High====
 
  * ~~Add spellcheck. (Since we are no more developing for Windows, for now at least.) Aspell? Added aspell, but it marks many right words as misspelled. Why? I have to work on it more. Update: Aspell doesn't work as expected.~~
+ * Correct the spell check bugs.
+ * ~~Correct the background image bug.~~ Done on 19.4.2010. Will be available in 0.6.3.
  * ~~Add file associations for Gnome, KDE and XFCE at least. (A universal solution would be great.) Done on 4.18.2010 with xdg-mime.~~
  * <b><u>Make a universal Linux installer with dependency check and uninstaller. (A Bash script of course.)</u></b>
 
