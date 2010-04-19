@@ -1,6 +1,6 @@
 ===Requirements===
 
-To compile from source you will need the development libraries (they usually have dev or devel in their names) to: 
+To compile from source you will need the development libraries (they usually have "dev" or "devel" in their names) to: 
 
  * Qt4.4 (or later)
  * SDL 1.2.13 (or later)
