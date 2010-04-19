@@ -11,9 +11,6 @@ To compile from source you will need the development libraries (they usually hav
 
 ===Installation===
 
-====On Ubuntu:====
-Just double click the .deb file or open with GDebi Package Installer.
-
 ====On Any Distro:====
 After downloading the source code, open up a terminal, cd to the directory which contains the downloaded file and to uncompress, type:
 
