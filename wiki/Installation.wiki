@@ -11,7 +11,7 @@ To compile from source you will need the development libraries (they usually hav
 
 ===Installation===
 
-====From Source:====
+==From Source:==
 After downloading the source code, open up a terminal, cd to the directory which contains the downloaded file and to uncompress, type:
 
 {{{
@@ -39,23 +39,30 @@ You can start !TextRoom by clicking on the menu entry or typing
 textroom
 }}}
 
+==By Installer==
+
+If you'd like to try the new installer, download the textroom-xxx-installer.bin file (xxx is the version number, e.g 0.6.3). Cd to the directory of the file and run this command:
+
+{{{
+./textroom-xxx-installer.bin
+}}}
+
+You don't have to su or sudo, installer will ask you when necessary. İnstaller includes file associations and an uninstaller.
 ----
 
 ===Uninstallation===
 
-==On Ubuntu:==
-If you've installed !TextRoom from the deb package, there should be an entry in synaptic. But if there isn't you can remove the package by typing 
+==If You've Installed By Installer:==
 {{{
-sudo apt-get remove textroom
+textroom-uninstall
 }}}
-in a terminal.
 
-==On Any Distro:==
+==If You've Installed From Source:==
 If you've installed from source code, you can do 
 {{{
 sudo make uninstall
 }}}
 in the source code directory. If you've removed the source code, you can download and untar the source from the !TextRoom site, and in the source directory again 
 {{{
-qmake-qt4 && make && sudo make uninstall
+qmake && make && sudo make uninstall
 }}}
