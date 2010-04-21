@@ -1,3 +1,20 @@
+===Version 0.6.3===
+ 
+ * Spellcheck with hunspell (US English only for now.).
+ * Universal Linux installer.
+ * Fixed some bugs (and produced new ones).
+
+===Version 0.6.2===
+
+ * Printing support.
+ * Spellcheck with aspell.
+ * Background images.
+ * Transparent statusbar.
+ * File association with .txr files. 
+ * Restoring all settings to defaults.
+ * Plain text only or rich text options.
+ * More polished Options dialog.
+
 ===Version 0.6.1===
 
  * basic rich text editing: bold, italic, underline, and changing font, font size and color
