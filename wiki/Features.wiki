@@ -1,22 +1,7 @@
-===Version 0.6.3===
+=Features=
+
+==Version 0.6.3.1 (Stable Release)==
  
- * Spellcheck with hunspell (US English only for now.).
- * Universal Linux installer.
- * Fixed some bugs (and produced new ones).
-
-===Version 0.6.2===
-
- * Printing support.
- * Spellcheck with aspell.
- * Background images.
- * Transparent statusbar.
- * File association with .txr files. 
- * Restoring all settings to defaults.
- * Plain text only or rich text options.
- * More polished Options dialog.
-
-===Version 0.6.1===
-
  * basic rich text editing: bold, italic, underline, and changing font, font size and color
  * configurable statusbar colors and fonts
  * configurable editor width and height
@@ -30,10 +15,19 @@
  * targets: setting a target word count
  * targets: setting short deadlines to write in minutes
  * keyboard shortcuts for the most common tasks (if you start the program for the first time, just press F1 for help)
- * typing sounds similar to a typewriter which can be disabled.
- * may be cross-platform: We are only supporting *Linux* right now. Because we don't have Windows or MacOSX. 
+ * typing sounds similar to a typewriter which can be disabled
+ * potentially cross-platform
+ * Spellcheck with hunspell (US English and <a href="code.google.com/p/tr-spell/">Turkish</a>, for now.).
+ * Universal Linux installer.
+ * Printing support.
+ * Background images.
+ * Transparent statusbar.
+ * File association with .txr files. 
+ * Restoring all settings to defaults.
+ * Plain text only or rich text options.
 
- <b>If you are interested in or has done compiling !TextRoom on a Windows or Mac, please contact us.</b>
+
+ <b>If you are interested in or has done compiling !TextRoom on a Mac, please contact us.</b>
 
 ===Shortcuts===
 
