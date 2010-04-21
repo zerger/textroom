@@ -1,4 +1,3 @@
-
 ===Requirements===
 
 To install from Ubuntu Package or Installer you will need the following installed:
@@ -9,8 +8,6 @@ To install from Ubuntu Package or Installer you will need the following installe
  * Hunspell 3.206 (or later)
 
 To compile from source, you will also need the development libraries (packages usually include "-dev" or "-devel" in the name).
-
-On Windows you won't need anything, because the installer installs the necessary dll files.
 
 ----
 
@@ -53,10 +50,6 @@ If you'd like to try the new installer, download the textroom-xxx-installer.bin 
 }}}
 
 You don't have to su or sudo, installer will ask you when necessary. İnstaller includes file associations and an uninstaller.
-
-===On Windows===
-
-Just double click on the installer, and followw the on-screen instructions.
 
 ----
 
