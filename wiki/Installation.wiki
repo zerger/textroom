@@ -7,7 +7,7 @@ To install from Ubuntu Package or Installer you will need the following installe
  * SDL-mixer 1.2.8 (or later)
  * Hunspell 3.206 (or later)
 
-To compile from source, you will also need the development libraries (packages usually include "-dev" or "-devel" in the name).
+To compile from source, you will also need the development libraries (packages usually include "-dev" or "-devel" in the name) as well.
 
 ----
 
