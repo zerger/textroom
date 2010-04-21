@@ -1,17 +1,22 @@
+
 ===Requirements===
 
-To compile from source you will need the development libraries (they usually have "dev" or "devel" in their names) to: 
+To install from Ubuntu Package or Installer you will need the following installed:
 
- * Qt4.5.1 (or later)
+ * Qt4.5.1(or later)
  * SDL 1.2.13 (or later)
- * SDL-mixer 1.2.8 (or later) 
- * Hunspell 3.2.06 (or later)
+ * SDL-mixer 1.2.8 (or later)
+ * Hunspell 3.206 (or later)
+
+To compile from source, you will also need the development libraries (packages usually include "-dev" or "-devel" in the name).
+
+On Windows you won't need anything, because the installer installs the necessary dll files.
 
 ----
 
 ===Installation===
 
-==From Source:==
+===From Source:===
 After downloading the source code, open up a terminal, cd to the directory which contains the downloaded file and to uncompress, type:
 
 {{{
@@ -39,7 +44,7 @@ You can start !TextRoom by clicking on the menu entry or typing
 textroom
 }}}
 
-==By Installer==
+===By Installer===
 
 If you'd like to try the new installer, download the textroom-xxx-installer.bin file (xxx is the version number, e.g 0.6.3). Cd to the directory of the file and run this command:
 
@@ -48,21 +53,24 @@ If you'd like to try the new installer, download the textroom-xxx-installer.bin 
 }}}
 
 You don't have to su or sudo, installer will ask you when necessary. İnstaller includes file associations and an uninstaller.
+
+===On Windows===
+
+Just double click on the installer, and followw the on-screen instructions.
+
 ----
 
 ===Uninstallation===
 
-==If You've Installed By Installer:==
+===If You've Installed By Installer or source:===
 {{{
 textroom-uninstall
 }}}
 
-==If You've Installed From Source:==
-If you've installed from source code, you can do 
+===On Ubuntu:===
 {{{
-sudo make uninstall
+sudo apt-get remove textroom
 }}}
-in the source code directory. If you've removed the source code, you can download and untar the source from the !TextRoom site, and in the source directory again 
-{{{
-qmake && make && sudo make uninstall
-}}}
+or you can remove it from Synaptic.
+
+===
