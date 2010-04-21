@@ -20,38 +20,37 @@
 
 ===Shortcuts===
 
-F1 ----------- Help screen
-F2 ----------- Options and Settings screen.
-F3 ----------- About
-F5 ----------- Check Spelling, clear spell check
-F11 ---------- Fullscreen on/off
-Escape ------- Quit or exit fullscreen, close About and Help dialogs 
-Ctrl+M ------- Minimize TextRoom
-Ctrl+Q ------- Quit
+ * F1 ----------- Help screen
+ * F2 ----------- Options and Settings screen.
+ * F3 ----------- About
+ * F5 ----------- Check Spelling, clear spell check
+ * F11 ---------- Fullscreen on/off
+ * Escape ------- Quit or exit fullscreen, close About and Help dialogs 
+ * Ctrl+M ------- Minimize TextRoom
+ * Ctrl+Q ------- Quit
 
-Ctrl+N ------- New
-Ctrl+O ------- Open
-Ctrl+S ------- Save
-Ctrl+Shift+S - Save As
-Ctrl+P ------- Print
+ * Ctrl+N ------- New
+ * Ctrl+O ------- Open
+ * Ctrl+S ------- Save
+ * Ctrl+Shift+S - Save As
+ * Ctrl+P ------- Print
 
-Ctrl+X ------- Cut
-Ctrl+C ------- Copy
-Ctrl+V ------- Paste
-Ctrl+A ------- Select All
-Ctrl+Z ------- Undo
-Ctrl+Shift+Z - Redo
+ * Ctrl+X ------- Cut
+ * Ctrl+C ------- Copy
+ * Ctrl+V ------- Paste
+ * Ctrl+A ------- Select All
+ * Ctrl+Z ------- Undo
+ * Ctrl+Shift+Z - Redo
 
-Ctrl+W ------- Change the current format
-Ctrl+B ------- Bold
-Ctrl+I ------- Italic
-Ctrl+U ------- Underline
-Ctrl+Up/Down - Change font size
+ * Ctrl+W ------- Change the current format
+ * Ctrl+B ------- Bold
+ * Ctrl+I ------- Italic
+ * Ctrl+Up/Down - Change font size
 
-Shift+F4 ----- Go back to cursor position
-Ctrl+F ------- Find
-F4 ----------- Find Next
-Ctrl+F4 ------ Find previous
+ * Shift+F4 ----- Go back to cursor position
+ * Ctrl+F ------- Find
+ * F4 ----------- Find Next
+ * Ctrl+F4 ------ Find previous
 
-Ctrl+D ------- Insert Date
-Ctrl+T ------- Insert Time
+ * Ctrl+D ------- Insert Date
+ * Ctrl+T ------- Insert Time
