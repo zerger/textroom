@@ -1,6 +1,6 @@
 =Features=
 
-==Version 0.6.3.1 (Stable Release)==
+==Version 0.6.3.2 (Stable Release)==
  
  * basic rich text editing: bold, italic, underline, and changing font, font size and color
  * configurable statusbar colors and fonts
