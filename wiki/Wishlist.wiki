@@ -32,7 +32,7 @@ This page was created on 4.16.2010.
  * <b>Make a .txr format with information about files.</b> ~~(Compressed with a properties.xml file? Similar to .odt? CSS? More dependencies?)~~ <b>No, compression brings dependencies. I can put the file information into html as xml instead.</b>
  * The above means, add file-specific settings.
  * Notes feature. Notes may be saved in txr files.
- * Scratchpad feature.
+ * ~~Scratchpad feature. Done on 5.8.2010 for 0.6.4.~~
 ----
 
 ====Low====
