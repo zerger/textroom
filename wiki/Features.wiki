@@ -1,7 +1,7 @@
 =Features=
 
-==Version 0.6.3.2 (Stable Release)==
- 
+==Version 0.6.4==
+
  * basic rich text editing: bold, italic, underline, and changing font, font size and color
  * configurable statusbar colors and fonts
  * configurable editor width and height
@@ -16,8 +16,8 @@
  * targets: setting short deadlines to write in minutes
  * keyboard shortcuts for the most common tasks (if you start the program for the first time, just press F1 for help)
  * typing sounds similar to a typewriter which can be disabled
- * potentially cross-platform
- * Spellcheck with hunspell (US English and <a href="code.google.com/p/tr-spell/">Turkish</a>, for now.).
+ * cross-platform, !TextRoom has a Windows installer now and it's possible to compile on Mac too.
+ * Spellcheck with hunspell (US English and [http://code.google.com/p/tr-spell/ Turkish], for now.).
  * Universal Linux installer.
  * Printing support.
  * Background images.
@@ -25,43 +25,5 @@
  * File association with .txr files. 
  * Restoring all settings to defaults.
  * Plain text only or rich text options.
-
-
- <b>If you are interested in or has done compiling !TextRoom on a Mac, please contact us.</b>
-
-===Shortcuts===
-
- * F1 ----------- Help screen
- * F2 ----------- Options and Settings screen.
- * F3 ----------- About
- * F5 ----------- Check Spelling, clear spell check
- * F11 ---------- Fullscreen on/off
- * Escape ------- Quit or exit fullscreen, close About and Help dialogs 
- * Ctrl+M ------- Minimize TextRoom
- * Ctrl+Q ------- Quit
-
- * Ctrl+N ------- New
- * Ctrl+O ------- Open
- * Ctrl+S ------- Save
- * Ctrl+Shift+S - Save As
- * Ctrl+P ------- Print
-
- * Ctrl+X ------- Cut
- * Ctrl+C ------- Copy
- * Ctrl+V ------- Paste
- * Ctrl+A ------- Select All
- * Ctrl+Z ------- Undo
- * Ctrl+Shift+Z - Redo
-
- * Ctrl+W ------- Change the current format
- * Ctrl+B ------- Bold
- * Ctrl+I ------- Italic
- * Ctrl+Up/Down - Change font size
-
- * Shift+F4 ----- Go back to cursor position
- * Ctrl+F ------- Find
- * F4 ----------- Find Next
- * Ctrl+F4 ------ Find previous
-
- * Ctrl+D ------- Insert Date
- * Ctrl+T ------- Insert Time
+ * Scratchpad.
+ * Line indent.
