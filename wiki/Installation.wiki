@@ -1,19 +1,19 @@
-===Requirements===
+=Requirements=
 
 To install from Ubuntu Package or Installer you will need the following installed:
 
- * Qt4.5.1(or later)
- * SDL 1.2.13 (or later)
+ * Qt4.6.2(or later)
+ * SDL 1.2.14 (or later)
  * SDL-mixer 1.2.8 (or later)
- * Hunspell 1.2.6 (or later)
+ * Hunspell 1.2.8 (or later)
 
 To compile from source, you will also need the development libraries (packages usually include "-dev" or "-devel" in the name) as well.
 
 ----
 
-===Installation===
+=Installation=
 
-===From Source:===
+==From Source:==
 After downloading the source code, open up a terminal, cd to the directory which contains the downloaded file and to uncompress, type:
 
 {{{
@@ -41,7 +41,7 @@ You can start !TextRoom by clicking on the menu entry or typing
 textroom
 }}}
 
-===By Installer===
+==By Installer==
 
 If you'd like to try the new installer, download the textroom-xxx-installer.bin file (xxx is the version number, e.g 0.6.3). Cd to the directory of the file and run this command:
 
@@ -53,14 +53,14 @@ You don't have to su or sudo, installer will ask you when necessary. İnstaller 
 
 ----
 
-===Uninstallation===
+=Uninstallation=
 
-===If You've Installed By Installer or source:===
+==If You've Installed By Installer or source:==
 {{{
 textroom-uninstall
 }}}
 
-===On Ubuntu:===
+==On Ubuntu:==
 {{{
 sudo apt-get remove textroom
 }}}
