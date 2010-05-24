@@ -33,6 +33,7 @@ This page was created on 4.16.2010.
  * ~~The above means, add file-specific settings. Given up on 5.10.2010~~
  * ~~Notes feature. Notes may be saved in txr files. Given up on 5.10.2010. Scratcpad does the job for now.~~
  * ~~Scratchpad feature. Done on 5.8.2010 for 0.6.4.~~
+ * Add a PDF export feature using <a href="http://code.google.com/p/wkhtmltopdf/">wkhtmltopdf</a>.
 ----
 
 ====Low====
